@@ -1,0 +1,304 @@
+*{
+    padding:0;
+    margin:0;
+}
+a:hover{
+    color: #d8b253;
+    cursor: pointer;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    
+}
+
+header{
+    display: flex;
+    position:fixed;
+    z-index:4;
+    width:100%;
+    height:13%;
+    background-color: #f3f3f3;
+    border: 2px solid #e1e1e1;
+    box-shadow: 0px 2px 5px 5px #0000007f;
+    align-items: center;
+}
+
+#logo{
+    align-items: center;
+    margin-left: 20px;;
+    background-image: url("shoe.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70%;
+    width:10%;
+}
+.mwk{
+    display: inline-block; /*important for button*/
+    background-color: transparent; 
+    border: none;
+    color: #000000;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    width:fit-content;
+    font-family: "Roboto", sans-serif;
+    
+  }
+
+.mwk:hover{
+    letter-spacing: 0.1em;
+    font-size: 1.4em;
+    transition: 0.1s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px 7px #eaeaea;
+    cursor: pointer; 
+}
+
+#gender{
+    display: flex;
+    height:fit-content;
+    width: 40%;
+    padding: 0% 0% 0% 3%;
+    flex-shrink: 2;
+}
+#priceSlider{
+    height:fit-content;
+    width: 20%; 
+    flex-shrink: 1;
+}
+#searchAccCart{
+    display: flex;
+    height:fit-content;
+    width: 40%; 
+    flex-shrink:1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#acc{
+    font-size: 1.5em;
+    margin-right: 7%;
+}
+#acc2{
+    font-size: 1.5em;
+    margin-right: 7%;
+}
+#acc:hover{
+    transition: 0.3 ease-in-out;
+    font-size: 1.6em;
+}
+#acc:active{
+    color:#3b3b3b;
+    
+}
+#acc2:hover{
+    color:#ef0000;
+    transition: 0.3s ease-in-out;
+    font-size: 1.6em;
+  
+}
+#acc2:active{
+    color:#fa4b4b;
+}
+
+
+content{
+    
+    width: 100%;
+    height:fit-content;
+    background-color: #d8b253;
+    
+}
+#adDiv
+{position:relative;
+ height: 75vh;
+ width: 100%;
+ margin-top: 9%;
+ display: flex;
+ justify-content: center;
+ background-color: #d8b253;
+}
+
+#adboard {
+    height: 75vh; /* Adjust height as needed */
+    width: 90%; /* Adjust width as needed */
+    border-radius: 50px;
+    background-color: #ffffff; /* Optional background color */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+  }
+  
+  #adboard.active img {  /* Target images only when adboard is active */
+    display: none; /* Hide all images initially */
+  }
+  
+#productDisplayDiv{
+ display: flex;
+ justify-content: center;
+ height: fit-content;
+ width: 100%;
+ margin: 5% 0%;
+ background-color: #d8b253;
+
+}
+
+#innerproductdisplaydiv{
+    height:fit-content;
+    width: 85vw;
+    border-radius: 50px;
+    border: 2px solid #454545;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    row-gap: 100px;
+    column-gap: 60px;
+    padding: 15px;
+    background-color: #454545;
+}
+
+
+
+.cards {
+    background-color: #ffffff;
+    border-radius: 50px;
+    height: 400px;
+    box-shadow: 0px 2px 5px 5px #2e2e2e;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.cards-front,
+.cards-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-front {
+    background-color: inherit;
+    color: #000;
+}
+
+.cards-back {
+    background-color: #000;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.cards:hover {
+    transform: rotateY(180deg);
+}
+
+.imgCardsm{
+    height: 80%;
+    width: 100%;
+    background-image:url("sampleimg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+footer{
+  user-select:none;
+  color: #7a7a7a;
+  text-align: center;
+ 
+  border-top: 2px solid #454545;
+  background-color: #000000;
+  height:fit-content;
+  width: 100%;
+  padding: 15px 0px 2% 0px;
+
+}
+
+.foottxt{
+ display: flex;
+ justify-content: space-evenly;
+ border-bottom: 2px dotted #454545;
+ padding-bottom: 2%;
+ margin-bottom: 2%;
+}
+
+.footdiv{
+ font-family: "Baloo Bhai 2", sans-serif;
+ text-align: left;
+ height:80px;
+ width:200px;
+ padding: 2% 0% 3% 0%;
+}
+
+.whitetxt{
+    
+    font-size: 20px;
+    color: #ffffff;
+}   
+    
+.greytxt{
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: 15px;
+    color: #7a7a7a;
+}
+
+.search-container {
+    display: flex;
+    width: fit-content;
+    
+  }
+   form{
+    padding:0;
+   }
+
+
+
+
+
+
+
+
+
+  .search-container form {
+    display: flex; /* Allow horizontal layout for input and button */
+    align-items: center; /* Vertically center the input and button */
+    width: fit-content;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 0.5rem 1rem; /* Add padding for better user experience */
+    border: 1px solid #ccc; /* Create a basic border */
+    border-radius: 8px 0px 0px 8px; /* Add rounded corners for a nicer look */
+    font-size: 1rem; /* Set the font size */
+   /* Expand the input to fill most of the form */
+   outline: none; /* Remove default outline on focus */
+   width: 50%;
+   height: 15px;
+  }
+  
+  .search-container input:focus {
+    border: 1px solid #242323; /* Change border color on focus for better UX */
+  }
+  
+  .search-container button[type="submit"] {
+    padding: 0.5rem 0.5rem;
+    background-color: #6d12dc; /* Set a green background color */
+    color: white; /* Set white text color for contrast */
+    border: 1px solid #6d12dc; /* Remove default button border */
+    border-radius: 0px 8px 8px 0px; /*goes from top-left top-right bottom-right bottom-left*/ 
+    cursor: pointer; /* Indicate clickable behavior */
+  }
+  
+  .search-container button[type="submit"]:hover {
+    background-color: #380a70; /* Change background color on hover for better UX */
+  }
