@@ -111,7 +111,7 @@ content{
     
     width: 100%;
     height:fit-content;
-    background-color: #d8b253;
+    background-color: #a9a28f;
     
 }
 #adDiv
@@ -121,16 +121,18 @@ content{
  margin-top: 9%;
  display: flex;
  justify-content: center;
- background-color: #d8b253;
+ background-color: #a9a28f;  
 }
 
 #adboard {
     height: 75vh; /* Adjust height as needed */
     width: 90%; /* Adjust width as needed */
     border-radius: 50px;
-    background-color: #ffffff; /* Optional background color */
+    border: 2px solid #606060;
+    background-color: #946f3b; /* Optional background color */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
+    box-shadow:  inset 0px 0px  5px 5px #0000003e;
   }
   
   #adboard.active img {  /* Target images only when adboard is active */
@@ -143,8 +145,8 @@ content{
  height: fit-content;
  width: 100%;
  margin: 5% 0%;
- background-color: #d8b253;
-
+ background-color: #a9a28f;
+ 
 }
 
 #innerproductdisplaydiv{
@@ -159,13 +161,13 @@ content{
     column-gap: 60px;
     padding: 15px;
     background-color: #454545;
+    box-shadow: 2px 5px 5px #0000007f;
 }
 
 
 
 .cards {
     background-color: #ffffff;
-    border-radius: 50px;
     height: 400px;
     box-shadow: 0px 2px 5px 5px #2e2e2e;
     display: flex;
@@ -173,6 +175,7 @@ content{
     position: relative;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    
 }
 
 .cards-front,
@@ -184,17 +187,79 @@ content{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .cards-front {
     background-color: inherit;
-    color: #000;
+    color: #000000;
 }
 
 .cards-back {
-    background-color: #000;
+    background-color:#121212;
     color: #fff;
     transform: rotateY(180deg);
+    flex-direction: column;
+    display: inline-block; /*important for button*/
+
+}
+
+.details{
+    font-family: "Baloo Bhai 2", sans-serif;
+    color: #ffffff;
+    margin: 3%;
+}
+#filter{
+    font-weight: 500;
+    color: #6d12dc;
+    font-size: 0.9rem;
+    font-family: "Baloo Bhai 2", sans-serif;
+    margin: 3%;
+    height:10%;
+}
+#name{
+    font-size: 2rem;   
+}
+#price{
+    font-size: 2rem;
+}
+#costqty{
+    height:25%;
+}
+#addproduct{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.pr{
+    width: 70%;
+    height: 5%;
+    padding: 3px;
+    border:2px solid #212121;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 400;
+    font-family:"Baloo Bhai 2", sans-serif;
+    margin:1% 0%;
+}
+
+.pr:hover{ 
+    border:2px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000; 
+}
+#wish:hover{
+    border:2px solid #cab57c;
+    background-color: #cab57c;
+    color: #000000;
+}
+#wish{
+    border:2px solid #7b6939;
+    background-color: #7b6939;
+    color: #ffffff;
 }
 
 .cards:hover {
