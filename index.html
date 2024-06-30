@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shoe site</title>
+    <title>Ice Cream</title>
     <link rel="stylesheet" href="xc.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Harmattan:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Harmattan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -20,24 +22,23 @@
 
 <header>
 
-  <div id="logo">
-  </div>
+  <a href="#" id="logo">
+  </a> <!--You need to use anchor tag for you logo so scroll to top works on click-->
 
-  <div id="gender">
-    <button class="mwk">MEN</button>
-    <button class="mwk">WOMEN</button>
-    <button class="mwk">KIDS</button>
+  <div id="food">
+    <button class="options" id="ice" onclick="iceButton()">IceCreams</button>
+    <button class="options" id="milk" onclick="milkButton()">Shakes</button>
+    <button class="options" id="cake" onclick="cakeButton()">Pastries</button>
   </div>
 
 <div id="searchAccCart">
+
   <div class="search-container">
-    <form action="/search" method="GET">
-        <input type="text" placeholder="Search.." name="query">
-        <button type="submit"><i class="bi bi-search"></i></button>
-    </form>
+        <div style="width: fit-content"><input type="search" placeholder="Search.." class="searchInput"></div>
+        <button class="search-btn"><i class="bi bi-search"></i></button>
   </div>
+
 <i class="bi bi-person" id="acc"></i>
-<i class="bi bi-suit-heart" id="acc2" ></i>
 <i class="bi bi-cart3" id="acc"></i>
 </div>
 </header>
@@ -53,335 +54,283 @@
     <div id="productDisplayDiv">
       <div id="innerproductdisplaydiv">
 
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Aurora Camo</p>
-            <p class="details" id="price">₹1199</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Slub Jersey</p>
-            <p class="details" id="price">₹999</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">WOMENS</p>
-            <p class="details" id="name">Fretted Skirt</p>
-            <p class="details" id="price">₹2999</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">KIDS</p>
-            <p class="details" id="name">Dino Tshirt</p>
-            <p class="details" id="price">₹599</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">WOMENS</p>
-            <p class="details" id="name">Roundneck Sweatshirt</p>
-            <p class="details" id="price">₹1999</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Shirt Cotton Formal</p>
-            <p class="details" id="price">₹1100</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              +Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">KIDS</p>
-            <p class="details" id="name">Hoop Stripe</p>
-            <p class="details" id="price">₹1199</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">KIDS</p>
-            <p class="details" id="name">Crayon FLake Tee</p>
-            <p class="details" id="price">₹670</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">WOMENS</p>
-            <p class="details" id="name"> Terry Crop Top</p>
-            <p class="details" id="price">₹759</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">WOMENS</p>
-            <p class="details" id="name">Cotton Top</p>
-            <p class="details" id="price">₹349</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Outdoor Tank</p>
-            <p class="details" id="price">₹456</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">KIDS</p>
-            <p class="details" id="name">YN disneyy</p>
-            <p class="details" id="price">₹259</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
+        
         
         <div class="cards">
-          <div class="cards-front">
-          </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Aurora Camo</p>
-            <p class="details" id="price">₹1199</p> 
+           <div class="productImage" id="img1"></div>
+           <div class="excludeImage">
+                 <div id="productName">Cookies & Cream</div>
+                 <p id="filter">Ice cream</p>
+                 <p class="details">Irresistible mix: Cookies swirled in cream (Classic combo) </p>  
+                 <div id="addprice">
+                     <button class="add" id="addId">Add</button>  
+                     <p class="price" id="priceId">Price: ₹199</p>
+                 </div>
            </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
         </div>
 
         <div class="cards">
-          <div class="cards-front">
+          <div class="productImage" id="img2"></div>
+          <div class="excludeImage">
+                <div id="productName">Blue Berry</div>
+                <p id="filter">Ice cream</p>
+                <p class="details">Sweet & tart: Tiny bursts of blueberry flavor, Fresh blueberries bursting with flavor</p>  
+                <div id="addprice">
+                   <button class="add" id="addId">Add</button>  
+                    <p class="price" id="priceId">Price: ₹229</p>
+                </div>
           </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Aurora Camo</p>
-            <p class="details" id="price">₹1199</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
-        </div>
-
+       </div>
+        
         <div class="cards">
-          <div class="cards-front">
+          <div class="productImage" id="img3"></div>
+          <div class="excludeImage">
+                <div id="productName">Cocoa Raspberry</div>
+                <p id="filter">Ice Cream</p>
+                <p class="details">Rich cocoa & tart raspberry swirl.Perfectly balanced</p>  
+                <div id="addprice">
+                  <button class="add" id="addId">Add</button>  
+                  <p class="price" id="priceId">Price: ₹229</p>
+                </div>
           </div>
-          <div class="cards-back">
-            <div>
-            <p id="filter">MENS</p>
-            <p class="details" id="name">Aurora Camo</p>
-            <p class="details" id="price">₹1199</p> 
-           </div>
-           <div id="costqty">
-           </div>
-          <div id="addproduct">
-            <button class="pr">
-              Wishlist it!
-            </button>
-            <button class="pr" id="wish">
-              Add to Cart
-            </button>
-          </div>
-          </div>
+       </div>
+
+       <div class="cards">
+        <div class="productImage" id="img4"></div>
+        <div class="excludeImage">
+              <div id="productName">Cotton Candy</div>
+              <p id="filter">Ice Cream</p>
+              <p class="details">Dreamy cotton candy delight,Sweet nostalgia: Taste of the carnival in a scoop</p>  
+              <div id="addprice">
+                <button class="add" id="addId">Add</button>  
+                <p class="price" id="priceId">Price: ₹229</p>
+              </div>
         </div>
+     </div>
+
+     <div class="cards">
+      <div class="productImage" id="img5"></div>
+      <div class="excludeImage">
+            <div id="productName">Coconut</div>
+            <p id="filter">Ice Cream</p>
+            <p class="details">Tropical escape: Creamy coconut paradise,Taste of the tropics in a scoop</p>  
+            <div id="addprice">
+              <button class="add" id="addId">Add</button>  
+              <p class="price" id="priceId">Price: ₹229</p>
+            </div>
+      </div>
+   </div>
+
+   <div class="cards">
+    <div class="productImage" id="img6"></div>
+    <div class="excludeImage">
+          <div id="productName">Mint Choco Chip</div>
+          <p id="filter">Ice Cream</p>
+          <p class="details">Refreshing chocolate chip dream. A refreshing indulgence</p>  
+          <div id="addprice">
+            <button class="add" id="addId">Add</button>  
+            <p class="price" id="priceId">Price: ₹229</p>
+          </div>
+    </div>
+ </div>
+
+ <div class="cards">
+  <div class="productImage" id="img7"></div>
+  <div class="excludeImage">
+        <div id="productName">Strawberry</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">Summer in a scoop: Sweet & juicy strawberry delight, Ripe strawberry ice cream</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img8"></div>
+  <div class="excludeImage">
+        <div id="productName">Mango</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">Tropical sunshine: Creamy mango paradise, silky smooth Luxurious mango indulgence</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img9"></div>
+  <div class="excludeImage">
+        <div id="productName">Blue Banana</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details"> This unique fruit boasts a vibrant blue peel and a surprisingly creamy, vanilla-like flavor</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img10"></div>
+  <div class="excludeImage">
+        <div id="productName">Walnut</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">the smooth cream embraces the satisfying crunch of walnuts, their nutty flavor adding a delightful depth</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img11"></div>
+  <div class="excludeImage">
+        <div id="productName">Kesar Pista</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">Luxurious saffron threads weave their magic throughout creamy cashews and pistachios</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img12"></div>
+  <div class="excludeImage">
+        <div id="productName">Vanilla</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">the finest Madagascar vanilla beans, their essence coaxed out to create a rich, aromatic base</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img13"></div>
+  <div class="excludeImage">
+        <div id="productName">Watermelon</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">We blend the juicy sweetness of watermelon with a touch of cream, creating a light and refreshing treat</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img14"></div>
+  <div class="excludeImage">
+        <div id="productName">Mocha Swirl</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">We use a bold, cold brew coffee base, ensuring a rich and intense coffee flavor in every bite</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img15"></div>
+  <div class="excludeImage">
+        <div id="productName">Butterscotch</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">A creamy treat using rich, brown sugar and real butter, capturing the essence of classic butterscotch candies</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img16"></div>
+  <div class="excludeImage">
+        <div id="productName">Pineapple</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details"> sun-ripened pineapples, bursting with juicy sweetness, creating a creamy and refreshing base</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img17"></div>
+  <div class="excludeImage">
+        <div id="productName">Carrot</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">the vibrant orange swirls dance with the smooth vanilla base, creating a unique taste sensation</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img18"></div>
+  <div class="excludeImage">
+        <div id="productName">Brownie </div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">a base of rich, creamy chocolate ice cream, then folded in generous chunks of fudgy brownies</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img19"></div>
+  <div class="excludeImage">
+        <div id="productName">Rainbow</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">Each spoonful delivers a burst with fruity flavors like strawberry, lemon, orange, and grape.</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="productImage" id="img20"></div>
+  <div class="excludeImage">
+        <div id="productName">Classic Chocolate</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">rich, dark cocoa, creates a luxuriously experience.</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+ 
+<div class="cards">
+  <div class="productImage" id="img21"></div>
+  <div class="excludeImage">
+        <div id="productName">Peanut Butter</div>
+        <p id="filter">Ice Cream</p>
+        <p class="details">We churn rich peanut butter into a smooth, velvety ice cream base, creating a flavor explosion</p>  
+        <div id="addprice">
+          <button class="add" id="addId">Add</button>  
+          <p class="price" id="priceId">Price: ₹229</p>
+        </div>
+  </div>
+</div>
+ 
+
+
 
       </div>
     </div>
@@ -393,19 +342,19 @@
 <footer>
   <div class="foottxt">
     <div class="footdiv" id=""><p class="whitetxt">Get to know us</p><ul style="list-style-type: none;">
-        <li><a>About us</a></li>
-        <li><a>Careers</a></li>
-        <li><a>Press releases</a></li>
+        <li><a class="footerLink">About us</a></li>
+        <li><a class="footerLink">Careers</a></li>
+        <li><a class="footerLink">Press releases</a></li>
       </ul></div>
     <div class="footdiv" id=""><p class="whitetxt">Connect with Us</p><ul style="list-style-type: none;">
-        <li><a>Facebook</a></li>
-        <li><a>Twitter</a></li>
-        <li><a>Instagram</a></li>
+        <li><a class="footerLink">Facebook</a></li>
+        <li><a class="footerLink">Twitter</a></li>
+        <li><a class="footerLink">Instagram</a></li>
       </ul></div>
     <div class="footdiv" id=""><p class="whitetxt">Let Us Help You</p><ul style="list-style-type: none;">
-        <li><a>Your Account</a></li>
-        <li><a>Returns Centre</a></li>
-        <li><a>100% Purchase Protection</a></li>
+        <li><a class="footerLink">Your Account</a></li>
+        <li><a class="footerLink">Returns Centre</a></li>
+        <li><a class="footerLink">100% Purchase Protection</a></li>
       </ul></div>
   </div>
     <p class="greytxt">Conditions of Use & Sale&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Notice&nbsp;&nbsp;|&nbsp;&nbsp;Interest-Based Ads</p><br>
@@ -414,6 +363,6 @@
 
 
 
-<script src="xj.js"></script>
+<script src="xj.js" ></script>
 </body>
 </html>
