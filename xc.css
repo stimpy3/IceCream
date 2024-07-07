@@ -2,6 +2,18 @@
     padding:0;
     margin:0;
 }
+:root {
+    --blue: #3778ac;
+    --darkblue: #224e72;
+    --darkerblue:#081017;
+    --classic:#6277ff;
+    --fruit:#ff42d9;
+    --nuts:#4cc2f9;
+    --unique:#c300ff;
+    --contentboxcolor:#dedede;
+    --question:#1b1b1b;
+    --answer:#0c0c0c;
+  }
 
 html{
     display: flex;
@@ -20,7 +32,7 @@ header{
     z-index:4;
     width:100%;
     height:13%;
-    background-color: #ffffff;
+    background-color: #FDFBF6;
     border: 2px solid #e1e1e1;
     box-shadow: 0px 2px 5px 5px #7a7a7a7f;
     align-items: center;
@@ -30,10 +42,15 @@ header{
     display: flex;
     margin-left: 20px;;
     background-image: url("logo.png");
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 100%;
-    aspect-ratio: 1/1;
+    height:95%;
+    width:10%;
+}
+#logo:hover{
+ border:2px solid #f0f0f0;
+ border-radius: 10px;
 }
 .options{
     box-sizing: border-box;
@@ -46,9 +63,8 @@ header{
     text-align: center;
     text-decoration: none;
     font-size: clamp(22px,12.5px,10px);
-    font-weight: 500;
-    width:fit-content;
-    font-family: "DM Sans", sans-serif;
+    font-weight:500;
+    font-family: "Quicksand", sans-serif;
  
     
   }
@@ -60,7 +76,7 @@ header{
     transition: 0.3s ease-in-out;
     cursor: pointer;
     filter:drop-shadow(4px 2px 1px #c2c2c2);
-    color: #303030; 
+    color: var(--blue); 
 }
 
 #food{
@@ -111,15 +127,15 @@ header{
   .search-container button{
     flex-shrink:0;
     padding: 0.5rem 0.5rem;
-    background-color: #6d12dc; /* Set a green background color */
+    background-color: var(--blue); /* Set a green background color */
     color: white; /* Set white text color for contrast */
-    border: 1px solid #6d12dc; /* Remove default button border */
+    border: 1px solid var(--blue); /* Remove default button border */
     
     cursor: pointer; /* Indicate clickable behavior */
   }
   
   .search-container button:hover {
-    background-color: #380a70; /* Change background color on hover for better UX */
+    background-color: var(--darkblue); 
   }
   
 #searchAccCart{
@@ -131,38 +147,61 @@ header{
     justify-content: flex-end;
 }
 
-#acc{
-    font-size: 1.5em;
+.cartContainer{
+    display: flex;
+    font-size: 1.2em;
     margin-right: 7%;
     cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0rem 0.1rem 0.5rem;
+    height: 35px;
+    transition: width 0.3s ease-in-out, filter 0.8s ease-in-out, color 0s ease-in-out;
+    width: 40px; /* or set a specific initial width */
+    background-color: var(--blue);
+    color: white;
     
 }
-#acc:hover{
-    transition: 0.3 ease-in-out;
-    font-size: 1.6em;
-    filter:drop-shadow(4px 2px 1px #cccccc);
-    transition: 0.3s ease-in-out;
-    color:#CB6CE6;
+.cartContainer p{
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-family: "Baloo Bhai 2", sans-serif;
 }
-#acc:active{
-    color:#3b3b3b;
+.cartContainer:hover {
+    border-radius: 15px;
+    font-weight: 100;
+    box-shadow: 2px 0px 5px #7a7a7a;
+    width: 80px;
+    color: white;
+    background-color: var(--blue);
+}
+.cartContainer:hover p{
+    display: block;
+    opacity: 1;
+}
+
+.cartContainer:active{
+    color:#ffffff;
+    background-color: var(--darkblue); 
     
 }
 
 
 
 content{
-    
     width: 100%;
     height:fit-content;
-   /*background-color: #dedede;*/
-   background-image: url("background.png");
+    background-color: #ececec;
     
+    /*background-image: url("background.png");
     background-size: contain;
-   /* background-image: linear-gradient(to bottom right,#FFEEEE,#DDEFBB);
-    background-repeat: no-repeat;*/
-    
+    background-image: linear-gradient(to right,#ffe4ca,#facefe,#d8fcff);
+    background-repeat: no-repeat; */  
 }
+
 #adDiv
 {position:relative;
  height: 75vh;
@@ -178,7 +217,7 @@ content{
     width: clamp( 90% ,90%, 688px );
     border-radius: 50px;
     border: 2px solid #606060;
-    background-color: #946f3b; /* Optional background color */
+    background-color: #ffffff; /* Optional background color */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
     box-shadow:  inset 0px 0px  5px 5px #0000003e;
@@ -194,24 +233,28 @@ content{
  justify-content: center;
  height: fit-content;
  width: 100%;
- margin: 5% 0%;
+ padding: 5% 0%;
  background-color: transparent;
+
 }
 
 #innerproductdisplaydiv{
     height:fit-content;
     width: 85vw;
     border-radius: 50px;
-    border: none;
+    border: 4px groove rgb(255, 255, 255);
+   
+    background-color: inherit;
+     /*backdrop-filter: blur(4px);
+    box-shadow: 3px 3px 6px 2px #787878;*/
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
     row-gap: 70px;
     column-gap: 60px;
     padding: 30px;
-    background-color: #434343;
-   
-    box-shadow: 3px 3px 10px 2px #474747;
+    
+    
     
 }
 
@@ -230,7 +273,7 @@ html::-webkit-scrollbar {
   }
   
 .cards {
-    
+    z-index: 2;
     background-color: #ffffff;
     height: 400px;
     box-shadow: 3px 3px 10px 2px #2f2f2f;
@@ -253,6 +296,7 @@ html::-webkit-scrollbar {
     box-sizing: border-box;
     background-color:#282828;
     overflow: hidden;
+    
 }
 .productImage{
     box-sizing: border-box;
@@ -262,7 +306,7 @@ html::-webkit-scrollbar {
     overflow: hidden;
 }
 #img1{
-    background-image: url("ice1.png");  
+    background-image: url("cookie.png");  
 }
 #img2{
     background-image: url("blu.png"); 
@@ -286,7 +330,7 @@ html::-webkit-scrollbar {
     background-image: url("mango.png"); 
 }
 #img9{
-    background-image: url("BluBan.png"); 
+    background-image: url("blueBan.png"); 
 }
 #img10{
     background-image: url("walnut.png"); 
@@ -310,7 +354,7 @@ html::-webkit-scrollbar {
     background-image: url("pineapple.png"); 
 }
 #img17{
-    background-image: url("carrot.png"); 
+    background-image: url("lemon.png"); 
 }
 #img18{
     background-image: url("Brown.png"); 
@@ -324,29 +368,57 @@ html::-webkit-scrollbar {
 #img21{
     background-image: url("peanut.png"); 
 }
+#img22{
+    background-image: url("cashew.png"); 
+}
+#img23{
+    background-image: url("cheese.png"); 
+}
+#img24{
+    background-image: url("almond.png"); 
+}
 .details{
     text-align: center;
     box-sizing: border-box;
     overflow: hidden;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Quicksand", sans-serif;
+    /*font-family:"Baloo Bhai 2", sans-serif;*/
     color: #ffffff;
     margin: 2% 0% 7% 0%;  
     font-size:1em;}
-
-#filter{
+.qtyfilter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.filter{
     text-align: center;
     font-weight: 500;
-    color: #9246f0;
     font-size: 0.9rem;
-    font-family: "Emilys Candy", serif;
+    font-family: "Quicksand", sans-serif;
     margin-bottom: 5px;
-    width: 100%;
+    width: fit-content;
     height:fit-content;
+}
+
+#nuts{
+    color: var(--nuts);
+}
+#unique{
+    color: var(--unique);
+}
+#classic{
+    color: var(--classic);
+}
+#fruit{
+    color:var(--fruit);
 }
 #productName{
     text-align: center;
     font-size: 2rem;
-    font-family: "IM Fell French Canon SC", serif;   
+    font-weight: 500;
+    font-family:"Baloo Bhai 2", sans-serif;
+    color:white;
 }
 #addprice{
     display: flex;
@@ -358,22 +430,23 @@ html::-webkit-scrollbar {
 }
 .add{
     padding: 3px;
-    border: none;
+    border: 2px solid #434343;
     cursor:pointer;
     color: #ffffff;
-    background-color: #CB6CE6;
+    background-color:var(--question);
     border-radius: 12px 12px 12px 12px;
     font-size: 1.2em;
     font-weight: 400;
     font-family:"Baloo Bhai 2", sans-serif;
     margin:1% 0%;
     padding: 0px 20px;
+    
 }
 .add2{
  padding: 3px;
  border: none;
  cursor:pointer;
- background-color: #454545;
+ background-color:var(--darkgray);
  color: #a4a4a4;
  border-radius: 12px 12px 12px 12px;
  font-size: 1.2em;
@@ -381,11 +454,12 @@ html::-webkit-scrollbar {
  font-family:"Baloo Bhai 2", sans-serif;
  margin:1% 0%;
  padding: 0px 20px;
+ box-shadow: 0px 0px 7px #454545;
 }
  .stepper {
     display: flex;
     align-items: center;
-    background-image: linear-gradient(to right,#76614d,#734a77,#466d70);
+    background-image: linear-gradient(to right, #305279, #632469);
     border-radius: 25px;
     padding: 5px;
     width: fit-content;
@@ -425,14 +499,149 @@ html::-webkit-scrollbar {
     padding: 0px 20px;
 }
 
+#questionDiv{
+    box-sizing:border-box;
+    display: flex;
+    height:20%;
+    width: 100%;
+    background-image: linear-gradient(to top,black 50%,#434343);
+    justify-content: center;
+    border-top: 2px solid #616161;
+    padding:8% 0%;
+}
+
+#innerQuestionDiv{
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+    width: 85vw;
+    background-color: transparent;
+    border-radius: 50px;
+    font-family: "DM Serif Display", serif;
+    font-size: 5rem;
+    justify-content: center;
+    background-image: linear-gradient(45deg, #ff00dd, #00b7ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+
+#questionDiv #freq{
+    margin:0% 0% 5% 0%;
+}
+#innerQuestionDiv p{
+  text-align: center;
+  
+}
+
+#questionbox{
+    display: flex;
+    flex-direction: column;
+}
+.questionanswer{
+    margin-bottom: 10px;
+    height: fit-content;
+    width: 100%;
+}
+.question{
+    cursor: pointer;
+    box-sizing: border-box;
+    padding:0px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #262626;
+    color: white;
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    /*font-family:"Baloo Bhai 2", sans-serif;*/
+    font-size: 1.5rem;
+}
+.question:hover{
+    background-color: var(--question);
+}
+
+.show{
+    font-size: 2rem;
+}
+.answer{
+    padding: 2px;
+    font-size: 1.5rem;
+    background-color: var(--answer);
+    color: white;
+    display: none;
+    
+}
+
+.r{ box-sizing: border-box;
+    background-color: black;
+    display: flex;
+    padding: 5% 7.5vw 100px 7.5vw;
+    justify-content: space-between;
+    width: 100%;
+    height:fit-content;
+    background-image: url("blackground.png");
+    border-top: 2px solid #454545;
+    border-bottom: 2px solid #454545;
+}
+#heading{
+    color: white;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    min-height: fit-content;
+    font-family: "DM Serif Display", serif;
+    font-size: 6rem;
+}
+#history{
+    border-radius: 25px;
+    width:60%;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid var(--question);
+    background-color: #000000;
+    
+}
+#history p{
+    background-color: inherit;
+    width:60%;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    padding: 10px;
+    user-select: none;
+}
+#history .imgc{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.imgcream{
+    position: relative;
+    height:90%;
+    width:90%;
+    background-image: url("icecream.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: iceshake;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes iceshake{
+     0% {top:0px;}
+    50% {top:20px;}
+   100% {top:0px;}
+}
 
 footer{
   user-select:none;
   color: #7a7a7a;
   text-align: center;
- 
-  border-top: 2px solid #454545;
-  background-color: #000000;
+  background-color: var(--darkerblue);
   height:fit-content;
   width: 100%;
   padding: 15px 0px 2% 0px;
@@ -460,7 +669,7 @@ footer{
     color: #ffffff;
 }  
 .footerLink:hover{
-    color: #e283ff;
+    color: var(--blue);
     cursor: pointer;
 } 
     
@@ -576,3 +785,4 @@ footer{
     }
    }
   
+
