@@ -132,7 +132,10 @@ searchInput.addEventListener("keydown", function(event) {
 
 
 //----------adboard---------------------------------------------------------
-const adboard = document.getElementById("adboard");
+
+//without Manual contol auto slideshow============================
+
+/*const adboard = document.getElementById("adboard");
 const images = ["sale1.png", "sale2.png", "sale3.png"]; // Array of image URLs
 const colors= ["#957FFC","#E0A8A2","#F8D871"];
 let currentImageIndex = 0;
@@ -143,8 +146,81 @@ function changeImage() {
   setTimeout(changeImage, 5000); // Change image every 5 seconds (5000 milliseconds) 
 }
 //setInterval(changeImage, 5000); doesnt show img for first 5 sec, so didn't use
-changeImage();
+changeImage();*/
 
+
+//Manual + automatic slideshow
+const adboard = document.getElementById("adboard");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const images = ["sale1.png", "sale2.png", "sale3.png"]; // Array of image URLs
+const colors = ["#957FFC", "#E0A8A2", "#F8D871"];
+let currentImageIndex = 0;
+let slideInterval; /*global necessay because we have set interval with variable slideInterval 
+ if this variable was local then each time the function containing this local is called
+ a new interval is set so this might lead to multiple intervals which will cause unpredictable 
+ slideshow behaviour*/
+const dot=document.getElementsByClassName("dot");
+const dot1=document.getElementById("dot1");
+const dot2=document.getElementById("dot2");
+const dot3=document.getElementById("dot3");
+function updateImage() {
+  adboard.style.backgroundImage = `url(${images[currentImageIndex]})`;
+  adboard.style.backgroundColor = colors[currentImageIndex];
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateImage();
+  resetTimer();
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateImage();
+  resetTimer();
+}
+
+function resetTimer() {
+  clearInterval(slideInterval);//important to clear previous ACTIVE interval which was set
+  //on first time we haven't called setInterval yet, there are no ACTIVE INTERVALS to be cleared. 
+  //Calling clearInterval with a non-existent interval ID won't affect anything. The function 
+  //will simply recognize there's no matching interval and do nothing.
+  //No error thrown if we try to clear an interval that isn't active
+  if(currentImageIndex==0){
+   dot3.style.backgroundColor="white";
+   dot3.style.border="none"
+   dot2.style.backgroundColor="white";
+   dot2.style.border="none"
+   dot1.style.backgroundColor="#454545";
+   dot1.style.border="1px solid white"
+  }
+  else if(currentImageIndex==1){
+   dot3.style.backgroundColor="white";
+   dot3.style.border="none"
+   dot1.style.backgroundColor="white";
+   dot1.style.border="none"
+   dot2.style.backgroundColor="#454545";
+   dot2.style.border="1px solid white"
+  }
+  else if(currentImageIndex==2){
+    dot1.style.backgroundColor="white";
+    dot1.style.border="none"
+    dot2.style.backgroundColor="white";
+    dot2.style.border="none"
+    dot3.style.backgroundColor="#454545";
+    dot3.style.border="1px solid white"
+  }
+  slideInterval = setInterval(nextImage, 5000);
+}
+
+// Set up event listeners for manual controls
+nextBtn.addEventListener("click", nextImage);
+prevBtn.addEventListener("click", prevImage);
+
+// Initialize the slideshow
+ updateImage();
+ resetTimer();
 //--------------------------------------------------------------------------
 
 
