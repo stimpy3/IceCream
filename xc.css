@@ -26,14 +26,15 @@ body{
     flex:1;
 }
 
-header{
+navbar{
     display: flex;
     position:fixed;
     z-index:4;
     width:100%;
-    height:13%;
-    background-color: #FDFBF6;
-    border: 2px solid #e1e1e1;
+    height:80px;
+    background-color: #dededeb9;
+    backdrop-filter: blur(8px);
+    border: none;
     box-shadow: 0px 2px 5px 5px #7a7a7a7f;
     align-items: center;
 }
@@ -42,6 +43,7 @@ header{
     display: flex;
     margin-left: 20px;;
     background-image: url("logo.png");
+    mix-blend-mode: color-burn;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -59,7 +61,7 @@ header{
     border: none;
     color: #000000;
     padding: 15px 15px;
-  margin-right: 6%;
+    margin-right: 6%;
     text-align: center;
     text-decoration: none;
     font-size: clamp(22px,12.5px,10px);
@@ -114,7 +116,7 @@ header{
    height: 100%;
    border: none;
    position: relative;
-   background-color: transparent;
+   background-color: #ffffffb1;
   }
 
 
@@ -203,31 +205,87 @@ content{
 }
 
 #adDiv
-{position:relative;
- height: 75vh;
+{
+ 
+ height: 450px;
  width: 100%;
- margin-top: 9%;
+ padding-top: 100px;
+ padding-bottom: 20px;
  display: flex;
  justify-content: center;
  background-color: transparent;
 }
 
 #adboard {
-    height: 75vh; /* Adjust height as needed */
+    position:relative;
+    height: 450px; /* Adjust height as needed */
     width: clamp( 90% ,90%, 688px );
     border-radius: 50px;
     border: 2px solid #606060;
-    background-color: #ffffff; /* Optional background color */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
     box-shadow:  inset 0px 0px  5px 5px #0000003e;
-
   }
   
   #adboard.active img {  /* Target images only when adboard is active */
     display: none; /* Hide all images initially */
   }
+
+  .sliderBtn{
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border:none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    background-color: #ffffff5f;
+    backdrop-filter: blur(3px);
+    
+}
+.sliderBtn:hover{
+    background-color: #ffffff3c;
+    backdrop-filter: blur(0px);
+}
+
+#controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    /*y axis centering*/
+    top: 45%; 
+    height: fit-content;
+}
+#prevBtn{
+    position: absolute;
+    left: 2%;
+}
+#nextBtn{
+    position: absolute;
+    right:2%;
+}
+
+.dotcontainer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom:5%;
+    left:50%;
+    transform: translate(-50%);
+    height:8px;
+    width:40px;
+}
+
+.dot{
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 100%;
+    width:8px;
+
+}
+
   
+
 #productDisplayDiv{
  display: flex;
  justify-content: center;
@@ -304,6 +362,8 @@ html::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    border-image: fill 0 linear-gradient(#00000000 65%,#282828d8 99%); 
+    /*adds dark gradient overlay on image from bottom dark to transparent top*/
 }
 #img1{
     background-image: url("cookie.png");  
@@ -330,7 +390,7 @@ html::-webkit-scrollbar {
     background-image: url("mango.png"); 
 }
 #img9{
-    background-image: url("BluBan.png"); 
+    background-image: url("blueBan.png"); 
 }
 #img10{
     background-image: url("walnut.png"); 
@@ -459,7 +519,7 @@ html::-webkit-scrollbar {
  .stepper {
     display: flex;
     align-items: center;
-    background-image: linear-gradient(to right, #305279, #632469);
+    background-image: linear-gradient(to right,#47649d,#694571,#6a3b43);
     border-radius: 25px;
     padding: 5px;
     width: fit-content;
@@ -520,7 +580,7 @@ html::-webkit-scrollbar {
     font-family: "DM Serif Display", serif;
     font-size: 5rem;
     justify-content: center;
-    background-image: linear-gradient(45deg, #ff00dd, #00b7ff);
+    background-image: linear-gradient(to right,#5282ec,#a96eb8,#d56777);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -578,44 +638,36 @@ html::-webkit-scrollbar {
 .r{ box-sizing: border-box;
     background-color: black;
     display: flex;
+    align-items: center;
     padding: 5% 7.5vw 100px 7.5vw;
     justify-content: space-between;
     width: 100%;
     height:fit-content;
     background-image: url("blackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     border-top: 2px solid #454545;
     border-bottom: 2px solid #454545;
 }
 #heading{
-    color: white;
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    min-height: fit-content;
-    font-family: "DM Serif Display", serif;
-    font-size: 6rem;
-}
-#history{
-    border-radius: 25px;
-    width:60%;
-    display: flex;
-    overflow: hidden;
-    border: 2px solid var(--question);
-    background-color: #000000;
-    
-}
-#history p{
-    background-color: inherit;
-    width:60%;
-    font-family: "Quicksand", sans-serif;
-    color: white;
-    padding: 10px;
-    user-select: none;
-}
-#history .imgc{
-    display: flex;
-    width: 50%;
     height: 100%;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+}
+#historyHeading{
+ font-size: 6rem;
+ font-family: "DM Serif Display", serif;
+ color: white;
+}
+#historyText{
+ color: white;
+ font-family: "Quicksand", sans-serif;
+}
+.imgc{
+    display: flex;
+    width: 30%;
+    height: 300px;
     justify-content: center;
     align-items: center;
 }
@@ -652,13 +704,13 @@ footer{
  display: flex;
  justify-content: space-evenly;
  border-bottom: 2px dotted #454545;
- padding-bottom: 2%;
+ padding-bottom: 5%;
  margin-bottom: 2%;
 }
 
 .footdiv{
  font-family: "Baloo Bhai 2", sans-serif;
- text-align: left;
+ text-align: center;
  height:80px;
  width:200px;
  padding: 2% 0% 3% 0%;
@@ -675,13 +727,23 @@ footer{
     
 .greytxt{
     font-family: "Baloo Bhai 2", sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     color: #7a7a7a;
+}
+/*min-width targets devices screen width and min-device-width targets browser width
+same for max
+hence gotta mention both of them separated by comma*/
+@media screen and (max-device-width: 840px), screen and (max-width: 840px){
+    #historyHeading{
+        font-size: 5rem;
+    }
+    .r{
+        padding: 5% 0vw 70px 3vw;
+    }
 }
 
 
-
-  @media screen and (min-device-width: 770px) and (max-device-width: 1025px){
+  @media screen and (min-device-width: 770px) and (max-device-width: 1025px), screen and (min-width: 770px) and (max-width: 1025px){
     .options{
         font-size: 17px;
     }
@@ -733,10 +795,9 @@ footer{
         min-width: 12px;
       }
     
-    
   }
 
-  @media screen and (min-device-width: 625px) and (max-device-width: 769px){
+  @media screen and (min-device-width: 625px) and (max-device-width: 769px), screen and (min-width: 625px) and (max-width: 769px){
    .cards .details{
     display: none;
    }
@@ -774,15 +835,17 @@ footer{
    #food{
     width: 35%;
    }
+   .imgc{
+    height: 200px;
+   }
    #searchAccCart{
     width:45%;
    }
    
   }
-  @media screen and (min-device-width: 0px) and (max-device-width: 625px){
+  @media screen and (min-device-width: 0px) and (max-device-width: 625px), screen and (min-width: 0px) and (max-width: 625px){
     body{
         display:none;
     }
    }
   
-
