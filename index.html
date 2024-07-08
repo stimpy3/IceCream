@@ -21,7 +21,7 @@
 
 
 
-<header>
+<navbar>
 
   <a href="#" id="logo">
   </a> <!--You need to use anchor tag for you logo so scroll to top works on click-->
@@ -42,14 +42,24 @@
 
   <button class="cartContainer"><i class="bi bi-cart3" id="acc"></i>&nbsp;&nbsp;<p>Cart</p></button>
 </div>
-</header>
+</navbar>
 
 
 
 
 <content>
     <div id="adDiv">
-        <div id="adboard"></div>
+        <div id="adboard">
+             <div id="controls">
+                  <button class="sliderBtn" id="prevBtn">&lt;</button>
+                  <button class="sliderBtn" id="nextBtn">&gt;</button>
+             </div>
+             <div class="dotcontainer">
+                  <div class="dot" id="dot1"></div>
+                  <div class="dot" id="dot2"></div>
+                  <div class="dot" id="dot3"></div>
+             </div>
+        </div>
     </div>
 
     <div id="productDisplayDiv">
@@ -398,15 +408,20 @@
 </div>
 
 <div class="r">
-  <div class="j" id="heading">Our History</div>
-  <div class="j" id="history"><div class="imgc"><div class="imgcream"></div></div><p>Scoops began in 2010 when founder NIGGA started 
-    churning small batches of ice cream in his kitchen. Inspired by his grandmother's recipes
-    and a passion for unique flavors, NIGGA's creations quickly gained a following at local 
-    farmers' markets. In 2012, we opened our first shop downtown, focusing on seasonal
-    ingredients and creative combinations. Today, with three locations across the city,
-    we continue to push the boundaries of frozen treats while staying true to our small-batch,
-    artisanal roots.</p>
+  <div class="j" id="heading">
+       <p id="historyHeading">Our History</p>
+       <div class="j" id="historyText"><p>Scoops began in 2010 when founder NIGGA started 
+        churning small batches of ice cream in his kitchen. Inspired by his grandmother's recipes
+        and a passion for unique flavors, NIGGA's creations quickly gained a following at local 
+        farmers' markets. In 2012, we opened our first shop downtown, focusing on seasonal
+        ingredients and creative combinations. Today, with three locations across the city,
+        we continue to push the boundaries of frozen treats while staying true to our small-batch,
+        artisanal roots.</p>
+      </div>
   </div>
+  <div class="imgc"><div class="imgcream"></div>
+</div>
+  
   </div>
 </div>
 
@@ -419,14 +434,14 @@
 <footer>
   <div class="foottxt">
     <div class="footdiv" id=""><p class="whitetxt">Get to know us</p><ul style="list-style-type: none;">
-        <li><a class="footerLink">About us</a></li>
         <li><a class="footerLink">Careers</a></li>
+        <li><a class="footerLink">About us</a></li>
         <li><a class="footerLink">Press releases</a></li>
       </ul></div>
     <div class="footdiv" id=""><p class="whitetxt">Connect with Us</p><ul style="list-style-type: none;">
-        <li><a class="footerLink">Facebook</a></li>
-        <li><a class="footerLink">Twitter</a></li>
-        <li><a class="footerLink">Instagram</a></li>
+        <li><a class="footerLink"><i class="bi bi-meta"></i>&nbsp;Meta</a></li>
+        <li><a class="footerLink"><i class="bi bi-twitter-x"></i>&nbsp;Twitter</a></li>
+        <li><a class="footerLink"><i class="bi bi-instagram"></i>&nbsp;Instagram</a></li>
       </ul></div>
     <div class="footdiv" id=""><p class="whitetxt">Let Us Help You</p><ul style="list-style-type: none;">
         <li><a class="footerLink">Your Account</a></li>
