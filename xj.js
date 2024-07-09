@@ -107,8 +107,15 @@ searchInput.addEventListener("keyup", function() {
   if (input.length) {
     filterDivs(input);
   } 
+  const screensizewidth=window.innerWidth;
+  const adboard= document.getElementById('adboard');
   const ProductDisplayDiv = document.getElementById('productDisplayDiv');
+  if(screensizewidth>625){
   ProductDisplayDiv.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+  else
+  {adboard.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
 });
 
 searchBtn.addEventListener("click", function() {
