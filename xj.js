@@ -44,9 +44,16 @@ When you use parentheses () after a function name, JavaScript interprets this as
  instruction to run the function right away.
 This happens at the point where the code is parsed, not when the event occurs*/
 logoRefresh.addEventListener("click",refreshDiv);
-function refreshDiv(){
-  allDiv.forEach(div=>{
-    div.style.display="block";
+function refreshDiv() {
+  const screenWidth = window.innerWidth;
+  
+  allDiv.forEach(div => {
+    if (screenWidth > 625) {
+      div.style.display = "block";
+    } else {
+      div.style.display = "flex";
+      div.style.flexDirection = "row";
+    }
   });
 }
 //--------------------------------------------------------------------------
@@ -87,7 +94,10 @@ const  almond2=`alldry fruitnaturalnutsalmondallmondaolmondbadambaddamroastalmon
 /*why a separate fiter div function
 The issue in your code is that the event listeners and the div filtering logic are not connected.
  The div filtering is running immediately, before any input is provided.*/
-allDiv.forEach(div => {
+ function filterDivs(input) {
+  const screenWidth = window.innerWidth;
+  
+  allDiv.forEach(div => {
     /*eval necessary*/
     if (eval(flavours[div.id].name).trim().toLowerCase().includes(input.trim().toLowerCase())) {
       if (screenWidth > 625) {
