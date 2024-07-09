@@ -1,460 +1,559 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ice Cream</title>
-    <link rel="stylesheet" href="xc.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Harmattan:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-</head>
-<body>
+//----------------Item-Information------------------------------------------
+const flavours = {
+  cookie: { name: "cookie2", qty: 0, price: 199, state:true},
+  blueberry: { name: "blueberry2", qty: 0, price: 180, state:true},
+  raspberry: { name: "raspberry2", qty: 0, price: 219, state:true},
+  cottoncandy: { name: "cottoncandy2", qty: 0, price: 249, state:true},
+  coconut: { name: "coconut2", qty: 0, price: 165, state:true},
+  mint: { name: "mint2", qty: 0, price: 180, state:true},
+  strawberry: { name: "strawberry2", qty: 0, price: 172, state:true},
+  mango: { name: "mango2", qty: 0, price: 180, state:true},
+  banana: { name: "banana2", qty: 0, price: 165, state:true},
+  walnut: { name: "walnut2", qty: 0, price: 190, state:true},
+  pista: { name: "pista2", qty: 0, price: 159, state:true},
+  vanilla: { name: "vanilla2", qty: 0, price: 159, state:true},
+  watermelon: { name: "watermelon2", qty: 0, price: 205, state:true},
+  mocha: { name: "mocha2", qty: 0, price: 199, state:true},
+  butterscotch: { name: "butterscotch2", qty: 0, price: 165, state:true},
+  pineapple: { name: "pineapple2", qty: 0, price: 205, state:true},
+  lemon: { name: "lemon2", qty: 0, price: 145, state:true},
+  brownie: { name: "brownie2", qty: 0, price: 165, state:true},
+  rainbow: { name: "rainbow2", qty: 0, price: 179 , state:true},
+  chocolate: { name: "chocolate2", qty: 0, price: 152 , state:true},
+  peanut: { name: "peanut2", qty: 0, price: 175, state:true},
+  cashew: { name: "cashew2", qty: 0, price: 144, state:true},
+  cheese: { name: "cheese2", qty: 0, price: 295, state:true},
+  almond: { name: "almond2", qty: 0, price: 150, state:true}
+};
+//--------------------------------------------------------------------------
 
 
 
+//-------logo-refresh-all-divs----------------------------------------------
+const logoRefresh= document.querySelector("#logo");
+/*which is correct
+logoRefresh.addEventListener("click",refreshDiv);
+or
+logoRefresh.addEventListener("click",refreshDiv());
 
-<nav>
+Function Reference vs. Function Call:
+refreshDiv (without parentheses) is a reference to the function itself.
+refreshDiv() (with parentheses) is a call to execute the function immediately.
 
-  <a href="#" id="logo">
-  </a> <!--You need to use anchor tag for you logo so scroll to top works on click-->
-
-  <div id="food">
-    <button class="options" id="milk" onclick="classicButton()">Classic</button>
-    <button class="options" id="ice" onclick="fruitButton()">Fruit</button>
-    <button class="options" id="cake" onclick="nutsButton()">Nuts</button>
-    <button class="options" id="cake" onclick="uniqueButton()">Unique</button>
-  </div>
-
-<div id="searchAccCart">
-
-  <div class="search-container">
-        <div style="width: fit-content"><input type="search" placeholder="Search.." class="searchInput"></div>
-        <button class="search-btn"><i class="bi bi-search"></i></button>
-  </div>
-
-  <button class="cartContainer"><i class="bi bi-cart3" id="acc"></i>&nbsp;&nbsp;<p>Cart</p></button>
-</div>
-</nav>
-
-
-
-
-<content>
-    <div id="adDiv">
-        <div id="adboard">
-             <div id="controls">
-                  <button class="sliderBtn" id="prevBtn">&lt;</button>
-                  <button class="sliderBtn" id="nextBtn">&gt;</button>
-             </div>
-             <div class="dotcontainer">
-                  <div class="dot" id="dot1"></div>
-                  <div class="dot" id="dot2"></div>
-                  <div class="dot" id="dot3"></div>
-             </div>
-        </div>
-    </div>
-
-    <div id="productDisplayDiv">
-      <div id="innerproductdisplaydiv">
-
-        
-        
-        <div class="cards" id="cookie">
-           <div class="productImage" id="img1"></div>
-           <div class="excludeImage">
-                 <div id="productName">Cookies & Cream</div>
-                 <div class="qtyfilter"><p class="filter" id="classic">Classic</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-                 <p class="details">Irresistible mix: Cookies swirled in cream (Classic combo) </p>  
-                 <div id="addprice">
-                     <button class="add" id="addId">Add</button>  
-                     <p class="price" id="priceId">Price: ₹199</p>
-                 </div>
-           </div>
-        </div>
-
-        <div class="cards" id="blueberry">
-          <div class="productImage" id="img2"></div>
-          <div class="excludeImage">
-                <div id="productName">Blue Berry</div>
-                <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-                <p class="details">Sweet & tart: Tiny bursts of blueberry flavor, Fresh blueberries bursting with flavor</p>  
-                <div id="addprice">
-                   <button class="add" id="addId">Add</button>  
-                    <p class="price" id="priceId">Price: ₹180</p>
-                </div>
-          </div>
-       </div>
-        
-        <div class="cards" id="raspberry">
-          <div class="productImage" id="img3"></div>
-          <div class="excludeImage">
-                <div id="productName">Cocoa Raspberry</div>
-                <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-                <p class="details">Rich cocoa & tart raspberry swirl.Perfectly balanced</p>  
-                <div id="addprice">
-                  <button class="add" id="addId">Add</button>  
-                  <p class="price" id="priceId">Price: ₹219</p>
-                </div>
-          </div>
-       </div>
-
-       <div class="cards" id="cottoncandy">
-        <div class="productImage" id="img4"></div>
-        <div class="excludeImage">
-              <div id="productName">Cotton Candy</div>
-              <div class="qtyfilter"><p class="filter" id="unique">Unique</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-              <p class="details">Dreamy cotton candy delight,Sweet nostalgia: Taste of the carnival in a scoop</p>  
-              <div id="addprice">
-                <button class="add" id="addId">Add</button>  
-                <p class="price" id="priceId">Price: ₹249</p>
-              </div>
-        </div>
-     </div>
-
-     <div class="cards" id="coconut">
-      <div class="productImage" id="img5"></div>
-      <div class="excludeImage">
-            <div id="productName">Coconut</div>
-            <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-            <p class="details">Tropical escape: Creamy coconut paradise,Taste of the tropics in a scoop</p>  
-            <div id="addprice">
-              <button class="add" id="addId">Add</button>  
-              <p class="price" id="priceId">Price: ₹165</p>
-            </div>
-      </div>
-   </div>
-
-   <div class="cards" id="mint">
-    <div class="productImage" id="img6"></div>
-    <div class="excludeImage">
-          <div id="productName">Mint Choco Chip</div>
-          <div class="qtyfilter"><p class="filter" id="unique">Unique</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-          <p class="details">Refreshing chocolate chip dream. A refreshing indulgence</p>  
-          <div id="addprice">
-            <button class="add" id="addId">Add</button>  
-            <p class="price" id="priceId">Price: ₹180</p>
-          </div>
-    </div>
- </div>
-
- <div class="cards" id="strawberry">
-  <div class="productImage" id="img7"></div>
-  <div class="excludeImage">
-        <div id="productName">Strawberry</div>
-        <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Sweet & juicy strawberry delight, Ripe strawberry ice cream</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹172</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="mango">
-  <div class="productImage" id="img8"></div>
-  <div class="excludeImage">
-        <div id="productName">Mango</div>
-        <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Tropical sunshine: Creamy mango paradise, silky smooth Luxurious mango indulgence</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹180</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="banana">
-  <div class="productImage" id="img9"></div>
-  <div class="excludeImage">
-        <div id="productName">Blue Banana</div>
-        <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details"> This unique fruit boasts a vibrant blue peel and a surprisingly creamy, vanilla-like flavor</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹165</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="walnut">
-  <div class="productImage" id="img10"></div>
-  <div class="excludeImage">
-        <div id="productName">Walnut</div>
-        <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">the smooth cream embraces the satisfying crunch of walnuts, their nutty flavor adding a delightful depth</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹190</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="pista">
-  <div class="productImage" id="img11"></div>
-  <div class="excludeImage">
-        <div id="productName">Kesar Pista</div>
-        <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Luxurious saffron threads weave their magic throughout creamy cashews and pistachios</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹159</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="vanilla">
-  <div class="productImage" id="img12"></div>
-  <div class="excludeImage">
-        <div id="productName">Vanilla</div>
-        <div class="qtyfilter"><p class="filter" id="classic">Classic</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">the finest Madagascar vanilla beans, their essence coaxed out to create a rich, aromatic base</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹159</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="watermelon">
-  <div class="productImage" id="img13"></div>
-  <div class="excludeImage">
-        <div id="productName">Watermelon</div>
-        <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">We blend the juicy sweetness of watermelon with a touch of cream, creating a light and refreshing treat</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹205</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="mocha">
-  <div class="productImage" id="img14"></div>
-  <div class="excludeImage">
-        <div id="productName">Mocha Swirl</div>
-        <div class="qtyfilter"><p class="filter" id="classic">Classic</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">We use a bold, cold brew coffee base, ensuring a rich and intense coffee flavor in every bite</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹199</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="butterscotch">
-  <div class="productImage" id="img15"></div>
-  <div class="excludeImage">
-        <div id="productName">Butterscotch</div>
-        <div class="qtyfilter"><p class="filter" id="classic">Classic</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">A creamy treat using rich, brown sugar and real butter, capturing the essence of classic butterscotch candies</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹165</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="pineapple">
-  <div class="productImage" id="img16"></div>
-  <div class="excludeImage">
-        <div id="productName">Pineapple</div>
-        <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details"> sun-ripened pineapples, bursting with juicy sweetness, creating a creamy and refreshing base</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹205</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="lemon">
-  <div class="productImage" id="img17"></div>
-  <div class="excludeImage">
-        <div id="productName">Lemon</div>
-        <div class="qtyfilter"><p class="filter" id="fruit">Fruit</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Zesty lemon shards pirouette through the cool and creamy canvas, delivering in every bite</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹145</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="brownie">
-  <div class="productImage" id="img18"></div>
-  <div class="excludeImage">
-        <div id="productName">Brownie </div>
-        <div class="qtyfilter"><p class="filter" id="classic">Classic</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">a base of rich, creamy chocolate ice cream, then folded in generous chunks of fudgy brownies</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹165</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="rainbow">
-  <div class="productImage" id="img19"></div>
-  <div class="excludeImage">
-        <div id="productName">Rainbow</div>
-        <div class="qtyfilter"><p class="filter" id="unique">Unique</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Each spoonful delivers a burst with fruity flavors like strawberry, lemon, orange, and grape.</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹179</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="chocolate">
-  <div class="productImage" id="img20"></div>
-  <div class="excludeImage">
-        <div id="productName">Classic Chocolate</div>
-        <div class="qtyfilter"><p class="filter" id="classic">Classic</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">rich, dark cocoa, creates a luxuriously experience.</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹152</p>
-        </div>
-  </div>
-</div>
- 
-<div class="cards" id="peanut">
-  <div class="productImage" id="img21"></div>
-  <div class="excludeImage">
-        <div id="productName">Peanut Butter</div>
-        <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">We churn rich peanut butter into a smooth, velvety ice cream base, creating a flavor explosion</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹175</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="cashew">
-  <div class="productImage" id="img22"></div>
-  <div class="excludeImage">
-        <div id="productName">Caramel Cashew</div>
-        <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Rich caramel ribbons weave through a canvas of creamy cashew gelato</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹144</p>
-        </div>
-  </div>
-</div>
-
-
-<div class="cards" id="cheese">
-  <div class="productImage" id="img23"></div>
-  <div class="excludeImage">
-        <div id="productName">Cheese Cake</div>
-        <div class="qtyfilter"><p class="filter" id="unique">Unique</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Creamy swirls of cheesecake ribbon through a luscious vanilla base</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹295</p>
-        </div>
-  </div>
-</div>
-
-<div class="cards" id="almond">
-  <div class="productImage" id="img24"></div>
-  <div class="excludeImage">
-        <div id="productName">Roasted Almond</div>
-        <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">almond chunks waltz through a cloud of creamy vanilla, offering a symphony of textures</p>  
-        <div id="addprice">
-          <button class="add" id="addId">Add</button>  
-          <p class="price" id="priceId">Price: ₹150</p>
-        </div>
-  </div>
-</div>
- 
-</div>
-</div>
-
-<div id="questionDiv">
-  <div id="innerQuestionDiv">
-       <p id="freq">Frequently Asked Questions</p>
-       <div id="questionbox">
-         <div class="questionanswer">
-           <button class="question" onclick="ingredient()"><p>Are our ingredients organic/locally sourced?</p><p class="show" id="ing">+</p></button>
-           <div class="answer" id="ingredientanswer"><p>We use organic milk and cream from local dairy farms, and source many of our mix-ins from local producers when possible.</p></div>  
-         </div> 
-         <div class="questionanswer">
-           <button class="question" onclick="opening()"><p>What are our opening hours?</p><p class="show" id="open">+</p></button>
-           <div class="answer" id="openinganswer"><p>We're open daily from 11am to 12am, with extended hours until 1am on Fridays and Saturdays.</p></div> 
-         </div>
-         <div class="questionanswer">
-           <button class="question" onclick="nutfree()"><p>Are our ice creams nut-free?</p><p class="show" id="nutf">+</p></button>
-           <div class="answer" id="nutfreeanswer"><p> We have several nut-free flavors, but our kitchen does process nuts. We take precautions to avoid cross-contamination, but please inform our staff of any allergies.</p></div> 
-         </div>
-         <div class="questionanswer">
-           <button class="question" onclick="expirydate()"><p>How long does our ice cream stay fresh if you take it home?</p><p class="show" id="expd">+</p></button>
-           <div class="answer" id="expirydateanswer"><p> Our ice cream is best enjoyed within 1-2 weeks of purchase when stored properly in a freezer at -18°C or below.</p></div>             
-         </div>  
-      </div>
-  </div>
-</div>
-
-<div class="r">
-  <div class="j" id="heading">
-       <p id="historyHeading">Our History</p>
-       <div class="j" id="historyText"><p>Scoops began in 2010 when founder NIGGA started 
-        churning small batches of ice cream in his kitchen. Inspired by his grandmother's recipes
-        and a passion for unique flavors, NIGGA's creations quickly gained a following at local 
-        farmers' markets. In 2012, we opened our first shop downtown, focusing on seasonal
-        ingredients and creative combinations. Today, with three locations across the city,
-        we continue to push the boundaries of frozen treats while staying true to our small-batch,
-        artisanal roots.</p>
-      </div>
-  </div>
-  <div class="imgc"><div class="imgcream"></div>
-</div>
+When you use parentheses () after a function name, JavaScript interprets this as an
+ instruction to run the function right away.
+This happens at the point where the code is parsed, not when the event occurs*/
+logoRefresh.addEventListener("click",refreshDiv);
+function refreshDiv() {
+  const screenWidth = window.innerWidth;
   
-  </div>
-</div>
+  allDiv.forEach(div => {
+    if (screenWidth > 625) {
+      div.style.display = "block";
+    } else {
+      div.style.display = "flex";
+      div.style.flexDirection = "row";
+    }
+  });
+}
+//--------------------------------------------------------------------------
 
+
+
+//-----------search--------------------------------------------------------
+const searchBtn = document.querySelector(".search-btn");
+const searchInput = document.querySelector(".searchInput");
+const allDiv = document.querySelectorAll(".cards");
+
+const cookie2 = `chocochipchoco chipallbiscuitsclassicscookies&creamscookiesandcreamscookies & creamscookies and creamsoreoscookiesdoughcookiedoughcookie dough cookies
+dough cookies&creamscookiesandcreamscookies & creamscookies and creamsoreoscookiesdoughcookiedoughcookie dough cookies`;
+const blueberry2 = `allnaturalblueberryblue berrybluberryblu berrypurpleblack currantblackcurrantblack currentblackcurrentHuckleberryfruits`;
+const raspberry2 = `allrednaturalraspberryrasp berryrapsberryraps berrypurplepinkcocoa raspberrycocao raspberry coco raspberry  fruits`;
+const cottoncandy2 = `alluniquespecialcottoncandycotton candycreamcottoncream candy cream cotton creamcandy blue and pink bluepink blue pink`;
+const coconut2=`allcoconut coco nut nariyalmalai`;
+const mint2=`allgreenmintchocochip chocomint choco mint choco chip mint chip choco mintchipchoco`;
+const  strawberry2=`allnaturalpinkstrawberrystrawberriesstraw berriesstraw berrysummerwintericecreamstrawberry icecreamstrawberry ice creamstrawberries icecream`;
+const  mango2=`allnaturalsummeryellowmangomangoes icecreammango icecreammango ice creammangoes ice cream`;
+const  banana2=`allnaturalfruitsbananabannanabannablue banana blue bannana blue banna bluebananabluebannanabluebannablue`;
+const  walnut2=`alldry fruitnaturalnutswalnutwallnutdry`;
+const  pista2=`allnaturalnuts kesarpistakesar cesarpistacesar kesar pista kesar cesar pista cesar pesta`;
+const  vanilla2=`allclassicplainplanenoflavourvanillawhiteicecream white ice cream vanilla ice cream vanilla`;
+const  watermelon2=`allredpinknaturalfruits watermelonwater melon watermalon water malonsummer`;
+const  mocha2=`allcoffeemochalatteCappuccinobitterbrownblack`;
+const  butterscotch2=`allyellowbutterscotchbutter scotchbutter skotchbutter skoch butter scochskotch butter`;
+const  pineapple2=`allyellownaturalfruitspineapplepine applepine aplepineapleananasannanasanas`;
+const  lemon2=`allyellownaturalfruitssourzesttinglemonlimboolimelemonlime`;
+const  brownie2=`allbrowniechocolatecakechoclateblackbrowncocoacocococao`;
+const  rainbow2=`allrainbowuniquecolorscolourslemonstrawberryorangegrapecolorfulcolourful`;
+const  chocolate2=`allblackbrowncocoacocococaoclassicchocolateclassic chocolate classic classicchoclateclassic choclate classic`;
+const  peanut2=`allnaturalnutspeanutbutterpeenutbutterpeanut butter peanutpeenut butter`;
+const  cashew2=`alldry fruitnaturalnutscaramelcashewcarmelcashewkaramelcashewkeramelcashewcarmalcashewcaramalcashew caramel cashewcarmel cashewkaramel cashewkeramel cashewcarmal cashewcaramal cashew`;
+const  cheese2=`allcheesecakechesecakecheesycakecheasecakechasecakecheese cakechese cakecheesy cakechease cakechase cake`;
+const  almond2=`alldry fruitnaturalnutsalmondallmondaolmondbadambaddamroastalmondroastedalmondroastroasted almondroast almondroast badamroasted badam`;
+
+/*why a separate fiter div function
+The issue in your code is that the event listeners and the div filtering logic are not connected.
+ The div filtering is running immediately, before any input is provided.*/
+ function filterDivs(input) {
+  const screenWidth = window.innerWidth;
   
-</content>
+  allDiv.forEach(div => {
+    /*eval necessary*/
+    if (eval(flavours[div.id].name).trim().toLowerCase().includes(input.trim().toLowerCase())) {
+      if (screenWidth > 625) {
+        div.style.display = 'block';
+      } else {
+        div.style.display = 'flex';
+        div.style.flexDirection = 'row';
+      }
+    } else {
+      div.style.display = 'none';
+    }
+  });
+}
+//live search
+searchInput.addEventListener("keyup", function() {
+  const input = searchInput.value;
+  if (input.length) {
+    filterDivs(input);
+  } 
+  const screensizewidth=window.innerWidth;
+  const adboard= document.getElementById('adboard');
+  const ProductDisplayDiv = document.getElementById('productDisplayDiv');
+  if(screensizewidth>625){
+  ProductDisplayDiv.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+  else
+  {adboard.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+});
+
+searchBtn.addEventListener("click", function() {
+  const input = searchInput.value;
+  filterDivs(input);
+});
+
+searchInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    const input = searchInput.value;
+    filterDivs(input);
+  }
+});
+
+// Add this function to handle window resizing
+window.addEventListener('resize', function() {
+  const input = searchInput.value;
+  if (input.length) {
+    filterDivs(input);
+  } else {
+    refreshDiv();
+  }
+});
+//--------------------------------------------------------------------------
+
+
+
+//----------adboard---------------------------------------------------------
+
+//without Manual contol auto slideshow============================
+
+/*const adboard = document.getElementById("adboard");
+const images = ["sale1.png", "sale2.png", "sale3.png"]; // Array of image URLs
+const colors= ["#957FFC","#E0A8A2","#F8D871"];
+let currentImageIndex = 0;
+function changeImage() {
+  adboard.style.backgroundImage = `url(${images[currentImageIndex]})`;
+  adboard.style.backgroundColor=colors[currentImageIndex];
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  setTimeout(changeImage, 5000); // Change image every 5 seconds (5000 milliseconds) 
+}
+//setInterval(changeImage, 5000); doesnt show img for first 5 sec, so didn't use
+changeImage();*/
+
+
+//Manual + automatic slideshow
+const adboard = document.getElementById("adboard");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const images = ["sale1.png", "sale2.png", "sale3.png"]; // Array of image URLs
+const Pimages = ["Psale1.png","Psale2.png","Psale3.png",];
+const colors = ["#957FFC", "#E0A8A2", "#A7B066"];
+
+let currentImageIndex = 0;
+let slideInterval; /*global necessay because we have set interval with variable slideInterval 
+ if this variable was local then each time the function containing this local is called
+ a new interval is set so this might lead to multiple intervals which will cause unpredictable 
+ slideshow behaviour*/
+const dot=document.getElementsByClassName("dot");
+const dot1=document.getElementById("dot1");
+const dot2=document.getElementById("dot2");
+const dot3=document.getElementById("dot3");
+const screensize=window.innerWidth;
+function updateImage() {
+  adboard.style.backgroundColor = colors[currentImageIndex];
+  if(screensize>625){
+  adboard.style.backgroundImage = `url(${images[currentImageIndex]})`;
+  }
+  else{
+    adboard.style.backgroundImage = `url(${Pimages[currentImageIndex]})`;
+  }
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateImage();
+  resetTimer();
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateImage();
+  resetTimer();
+}
+
+function resetTimer() {
+  clearInterval(slideInterval);//important to clear previous ACTIVE interval which was set
+  //on first time we haven't called setInterval yet, there are no ACTIVE INTERVALS to be cleared. 
+  //Calling clearInterval with a non-existent interval ID won't affect anything. The function 
+  //will simply recognize there's no matching interval and do nothing.
+  //No error thrown if we try to clear an interval that isn't active
+  if(currentImageIndex==0){
+   dot3.style.backgroundColor="white";
+   dot3.style.border="none"
+   dot2.style.backgroundColor="white";
+   dot2.style.border="none"
+   dot1.style.backgroundColor="#454545";
+   dot1.style.border="1px solid white"
+  }
+  else if(currentImageIndex==1){
+   dot3.style.backgroundColor="white";
+   dot3.style.border="none"
+   dot1.style.backgroundColor="white";
+   dot1.style.border="none"
+   dot2.style.backgroundColor="#454545";
+   dot2.style.border="1px solid white"
+  }
+  else if(currentImageIndex==2){
+    dot1.style.backgroundColor="white";
+    dot1.style.border="none"
+    dot2.style.backgroundColor="white";
+    dot2.style.border="none"
+    dot3.style.backgroundColor="#454545";
+    dot3.style.border="1px solid white"
+  }
+  slideInterval = setInterval(nextImage, 5000);
+}
+
+// Set up event listeners for manual controls
+nextBtn.addEventListener("click", nextImage);
+prevBtn.addEventListener("click", prevImage);
+
+// Initialize the slideshow
+ updateImage();
+ resetTimer();
+//--------------------------------------------------------------------------
 
 
 
 
-<footer>
-  <div class="foottxt">
-    <div class="footdiv" id=""><p class="whitetxt">Get to know us</p><ul style="list-style-type: none;">
-        <li><a class="footerLink">Careers</a></li>
-        <li><a class="footerLink">About us</a></li>
-        <li><a class="footerLink">releases</a></li>
-      </ul></div>
-    <div class="footdiv" id=""><p class="whitetxt">Connect with Us</p><ul style="list-style-type: none;">
-      <li><a class="footerLink"><i class="bi bi-instagram"></i>&nbsp;Instagram</a></li>  
-      <li><a class="footerLink"><i class="bi bi-meta"></i>&nbsp;Meta</a></li>
-        <li><a class="footerLink"><i class="bi bi-twitter-x"></i>&nbsp;Twitter</a></li>
-      </ul></div>
-    <div class="footdiv" id=""><p class="whitetxt">Let Us Help You</p><ul style="list-style-type: none;">
-        <li><a class="footerLink">Purchase Protection</a></li>
-        <li><a class="footerLink">Your Account</a></li>
-        <li><a class="footerLink">Refund Protection</a></li>
-      </ul></div>
-  </div>
-    <p class="greytxt">Conditions of Use & Sale&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Notice&nbsp;&nbsp;|&nbsp;&nbsp;Interest-Based Ads</p><br>
-    <span id="poo" class="greytxt"><i class="bi bi-c-circle"></i> Demo site</span>
-</footer>
+//------------------filter--------------------------------------------------------
+
+let classic = ["cookie","chocolate","vanilla","mocha","butterscotch","brownie"];
+let fruit=["strawberry","mango","banana","watermelon","pineapple","blueberry","raspberry","coconut","lemon"];
+let nuts=["walnut","pista","peanut","almond","cashew"];
+let unique=["cottoncandy","rainbow","cheese","mint"];
+
+let showDiv = [];
+
+function updateVisibleDivs() {
+  const ProductDisplayDiv = document.getElementById('productDisplayDiv');
+  ProductDisplayDiv.scrollIntoView({behavior: 'smooth', block: 'start'});
+  allDiv.forEach(div => {
+      if (showDiv.includes(div.id)) {
+          div.style.display = 'block';
+      } else {
+          div.style.display = 'none';
+      }
+  });
+}
+//need for spread operator ...
+/*when you use ...classic,  it doesn't modify the original classic array. It creates a new array
+ containing all the elements from classic. This is important because if you directly 
+ assigned classic to showDiv, any modifications to showDiv would also affect classic.
+ Creates a new array: Instead of assigning showDiv = classic, which would make showDiv reference
+  the same array as classic, this creates a new array with the same elements.
+Avoids mutation: Any changes to showDiv won't affect the original classic array.
+Flexibility: If classic is not an array but another iterable (like a NodeList),
+ the spread operator converts it into a proper array.*/
+
+function classicButton() {
+  showDiv = [...classic];
+  console.log(showDiv);
+  updateVisibleDivs();
+}
+
+function fruitButton() {
+  showDiv = [...fruit];
+  console.log(showDiv);
+  updateVisibleDivs();
+}
+
+function nutsButton() {
+  showDiv = [...nuts];
+  console.log(showDiv);
+  updateVisibleDivs();
+}
+
+function uniqueButton() {
+  showDiv = [...unique];
+  console.log(showDiv);
+  updateVisibleDivs();
+}
+//--------------------------------------------------------------------------
 
 
 
-<script src="xj.js" ></script>
-</body>
-</html>
+//-------------------ADD quantity-------------------------------------------
+const addBtns = document.querySelectorAll(".add");
+
+addBtns.forEach(addBtn => {
+    let originalPrice = addBtn.nextElementSibling.innerText; // Assuming the price is in the next element
+    const cardElement = addBtn.closest('.cards');
+    addBtn.addEventListener("click", function() {
+      if(flavours[cardElement.id].state){
+        flavours[cardElement.id].state=false;
+        this.innerText = "Added";
+        this.classList.remove("add");
+        this.classList.add("add2");
+        const priceElement = this.nextElementSibling;
+        priceElement.innerHTML = `
+            <div class="stepper">
+                <button class="stepper-btn" id="minus">-</button>
+                <div class="stepper-number">1</div>
+                <button class="stepper-btn" id="plus">+</button>
+            </div>`;
+        initializeStepper(priceElement, this, originalPrice,cardElement.id);
+      }
+      else{
+        flavours[cardElement.id].state=true;
+        flavours[cardElement.id].qty=0;
+        addBtn.innerText = "Add";
+        addBtn.classList.remove("add2");
+        addBtn.classList.add("add");
+        const priceElement = this.nextElementSibling;
+        priceElement.innerText = originalPrice;
+      }
+
+    });
+  
+
+});
+//but how has putting it in a FUNCTION fixed the issue
+/*The issue with your code is that you're trying to add event listeners to the minus and plus buttons 
+before they exist in the DOM. These buttons are created dynamically when the addbtn is clicked, but
+ the event listeners are being added when the script first runs. 
+Timing of execution:
+In the original code, the event listeners for minus and plus were being added immediately when the 
+script ran. At that point, these elements didn't exist in the DOM, so the querySelector calls returned
+ null, and no listeners were actually attached.
+Function creation:
+By putting the event listener code into a function (addPlusMinusListeners()), we're not executing this 
+code immediately. We're just defining what should happen when the function is called.
+Delayed execution:
+The key is when and where we call this function. We call addPlusMinusListeners() right after we
+ create the new buttons in the DOM:
+Correct timing:
+Now, when addPlusMinusListeners() is called, the minus and plus buttons actually exist in the DOM.
+ So when the function runs document.querySelector("#minus") and document.querySelector("#plus"), 
+ it successfully finds these elements and can attach the event listeners to them.*/
+function initializeStepper(container, addBtn,originalPrice,id) {
+  /*When we call this.closest('.cards') from the "Add" button, it's looking for the nearest 
+  ancestor (including itself) that matches the selector .cards.*/
+    flavours[id].qty= 1;
+    const numberDisplay = container.querySelector('.stepper-number');
+    const minus= container.querySelector("#minus");  
+    const plus= container.querySelector("#plus"); 
+    /* why container.query and not document.query
+    
+    By using document.querySelector only some utton wrer increment/decrementing and other cards were 
+    chaning by just changing 1 card. the reason is that, the listeners were being attached to the first 
+    matching element in the document, rather than the specific elements within each card. it was 
+    selecting the first elements with these classes in the entire document. This meant that clicking 
+    the plus or minus buttons would always affect the first item added, regardless of which item 
+    you were trying to modify.
+When you changed it to container.querySelector, the event listeners were correctly attached to the 
+specific elements within the respective card, allowing multiple items to be independently managed.
+const minus= document.querySelector(".minus");
+const plus= document.querySelector(".plus");
+This selects the first .minus and .plus elements in the document, which means all cards were 
+incorrectly referencing the same buttons.
+const minus= container.querySelector(".minus");
+const plus= container.querySelector(".plus");
+This selects the .minus and .plus elements within the container, ensuring each card's stepper 
+buttons are managed independently.
+
+Event Binding Timing:
+
+The initializeStepper function is called each time an item is added, but it was selecting 
+buttons globally.
+This meant it always bound to the first set of buttons created, regardless of which item was
+ being added.
+
+
+Dynamic Content:
+
+Your stepper buttons are created dynamically when an item is added.
+This dynamic creation makes it more crucial to scope the selection to the specific container.
+
+
+Context-Dependent Functionality:
+
+In this case, the functionality needed to be specific to each item, which wasn't achieved
+ with a global selector(document).
+
+Why didn't I do this type of change before in any other code where i have used 
+document.querySelector()
+In other parts of your code, you might be selecting elements that are:
+a) Present in the initial HTML
+b) Unique across the document
+c) Not requiring item-specific behavior
+*/  
+        minus.addEventListener("click",function(){
+          flavours[id].qty--;
+            if (flavours[id].qty=== 0) {
+                // Revert to original state
+                flavours[id].state=true;
+                addBtn.innerText = "Add";
+                addBtn.classList.remove("add2");
+                addBtn.classList.add("add");
+                container.innerText = originalPrice;
+            } else {
+                numberDisplay.textContent = String(flavours[id].qty);
+            }
+        });
+        
+        plus.addEventListener("click",function(){
+          flavours[id].qty++;
+            numberDisplay.textContent = String(flavours[id].qty);
+        });
+  
+}
+//--------------------------------------------------------------------------
+
+//----------------------------frequently-asked-questions--------------------
+let ingredientanswer=document.querySelector("#ingredientanswer");
+let openinganswer=document.querySelector("#openinganswer");
+let nutfreeanswer=document.querySelector("#nutfreeanswer");
+let expirydateanswer=document.querySelector("#expirydateanswer");
+let show=document.querySelectorAll(".show");
+let ing=document.querySelector("#ing");
+let open=document.querySelector("#open");
+let nutf=document.querySelector("#nutf");
+let expd=document.querySelector("#expd");
+let check={
+  ingC:0,
+  opC:0,
+  nuC:0,
+  exC:0
+};
+function ingredient(){
+ if(check["ingC"]==0){
+ show.forEach(sign =>{
+  sign.innerText="+";
+ })
+ ing.innerText="-";
+ ingredientanswer.style.display="block";
+ openinganswer.style.display="none";
+ nutfreeanswer.style.display="none";
+ expirydateanswer.style.display="none";
+ check={
+  ingC:0,
+  opC:0,
+  nuC:0,
+  exC:0
+};
+ check["ingC"]=1;
+ }
+ else if(check["ingC"]==1){
+  ing.innerText="+";
+ ingredientanswer.style.display="none";
+ check["ingC"]=0;
+ }
+}
+
+function opening(){
+  if(check["opC"]==0){
+    show.forEach(sign =>{
+      sign.innerText="+";
+     })
+    open.innerText="-";
+    openinganswer.style.display="block";
+    ingredientanswer.style.display="none";
+    openinganswer.style.display="block";
+    nutfreeanswer.style.display="none";
+    expirydateanswer.style.display="none";
+    check={
+      ingC:0,
+      opC:0,
+      nuC:0,
+      exC:0
+    };
+    check["opC"]=1;
+    }
+    else if(check["opC"]==1){
+     open.innerText="+";
+    openinganswer.style.display="none";
+    check["opC"]=0;
+    }
+}
+
+function nutfree(){
+  show.forEach(sign =>{
+    sign.innerText="+";
+   })
+  if(check["nuC"]==0){
+    nutf.innerText="-";
+    ingredientanswer.style.display="none";
+    openinganswer.style.display="none";
+    nutfreeanswer.style.display="block";
+    expirydateanswer.style.display="none";
+    check={
+      ingC:0,
+      opC:0,
+      nuC:0,
+      exC:0
+    };
+    check["nuC"]=1;
+    }
+    else if(check["nuC"]==1){
+     nutf.innerText="+";
+    nutfreeanswer.style.display="none";
+    check["nuC"]=0;
+    }
+}
+
+function expirydate(){
+  show.forEach(sign =>{
+    sign.innerText="+";
+   })
+  if(check["exC"]==0){
+    expd.innerText="-";
+    ingredientanswer.style.display="none";
+    openinganswer.style.display="none";
+    nutfreeanswer.style.display="none";
+    expirydateanswer.style.display="block";
+    check={
+      ingC:0,
+      opC:0,
+      nuC:0,
+      exC:0
+    };
+    check["exC"]=1;
+    }
+    else if(check["exC"]==1){
+     expd.innerText="+";
+     expirydateanswer.style.display="none";
+    check["exC"]=0;
+    }
+}
+//--------------------------------------------------------------------------
