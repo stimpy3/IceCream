@@ -189,6 +189,42 @@ const dot1=document.getElementById("dot1");
 const dot2=document.getElementById("dot2");
 const dot3=document.getElementById("dot3");
 const screensize=window.innerWidth;
+
+//handling advertise swipes---------------------------
+adboard.addEventListener('touchstart', handleTouchStart, false);
+adboard.addEventListener('touchmove', handleTouchMove, false);
+adboard.addEventListener('touchend', handleTouchEnd, false);
+
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+  touchEndX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  handleSwipe();
+}
+
+function handleSwipe() {
+  const swipeThreshold = 50; // minimum distance considered as swipe
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+          // Swiped left
+          nextImage();
+      } else {
+          // Swiped right
+          prevImage();
+      }
+  }
+  // Reset values
+  touchStartX = 0;
+  touchEndX = 0;
+}
+//-------------------------- touch slide advertise------
+
 function updateImage() {
   adboard.style.backgroundColor = colors[currentImageIndex];
   if(screensize>625){
