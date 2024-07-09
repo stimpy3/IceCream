@@ -576,10 +576,7 @@ html::-webkit-scrollbar {
     font-family: "DM Serif Display", serif;
     font-size: 5rem;
     justify-content: center;
-   background-color:#6da7c2;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color:#6da7c2;
 }
 
 #questionDiv #freq{
@@ -653,7 +650,7 @@ html::-webkit-scrollbar {
 #historyHeading{
  font-size: 6rem;
  font-family: "DM Serif Display", serif;
- color: white;
+ color:#6da7c2;
 }
 #historyText{
  color: white;
