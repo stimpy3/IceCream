@@ -859,21 +859,21 @@ hence gotta mention both of them separated by comma*/
         width: fit-content;
     }
     .search-container {
-        width:50%;
+        width:55%;
         border-radius: 8px;
         overflow: hidden;
         margin-right: 5%;
-        height: 30px;
+        height: 40px;
         background-color:#ffffffb1;
       }
     
       .search-container input[type="search"] {
         padding: 0.2rem 0.5rem; /* Add padding for better user experience */
-        font-size: 0.8rem; /* Set the font size */
+        font-size: 1rem; /* Set the font size */
        background-color: inherit;
       } 
       .search-container button{
-        padding: 0.2rem 0.3rem;
+        padding: 0.2rem 0.5rem;
         height: 100%;
         font-size: 0.8rem;
       }
@@ -882,16 +882,16 @@ hence gotta mention both of them separated by comma*/
         background-color: var(--darkblue); 
       }
     .cartContainer{
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding-right: 2px;
-        height: 30px;
+        height: 40px;
         width: 30px;
         border-radius: 10px;
     }
     .cartContainer:hover{
         font-size: 0.9rem;
         padding-right: 4px;
-        height: 30px;
+        height: 40px;
         border-radius: 10px;
     }
     
@@ -974,24 +974,24 @@ hence gotta mention both of them separated by comma*/
     height: fit-content;
 }
 .add{
-    font-size: 0.9rem;
-    padding: 0px 10px;
+    font-size: 1.1rem;
+    padding: 0px 12px;
 }
 .add2{
- font-size: 0.9rem;
+ font-size: 1.1rem;
  padding: 3px 10px;
 }
 .price{
     padding: 3px;
     color: #000000;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     padding: 0px 10px;
 }
 .stepper {
     background-color: #a0a0a0;
     color: white;
-    padding: 3px;
+    padding: 4px;
     width: fit-content;
     box-shadow: 0px 0px 7px #a1a1a1;
     border-radius: 10px;
@@ -1003,16 +1003,15 @@ hence gotta mention both of them separated by comma*/
     border-radius: 40%;
     background-color: #eaeaea;
     color: black;
-    font-size: 0.9rem;
+    font-size: 1rem;
     box-shadow: 0px 0px 7px #454545;
   }
   
   .stepper-number {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0 2px;
     color: black;
   }
-  
   
     #questionDiv{
     padding: 8% 7.5vw;
