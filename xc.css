@@ -2,6 +2,8 @@
     padding:0;
     margin:0;
 }
+button{user-select:none;
+}
 :root {
     --blue: #3778ac;
     --darkblue: #224e72;
