@@ -576,7 +576,7 @@ html::-webkit-scrollbar {
     font-family: "DM Serif Display", serif;
     font-size: 5rem;
     justify-content: center;
-    background-image: linear-gradient(to right,#5282ec,#a96eb8,#d56777);
+   background-color:#6da7c2;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
