@@ -51,6 +51,7 @@ nav{
     background-repeat: no-repeat;
     height:95%;
     width:10%;
+    user-select:none;
 }
 #logo:hover{
  border:2px solid #f0f0f0;
