@@ -490,31 +490,31 @@ html::-webkit-scrollbar {
 }
 .add{
     padding: 3px;
-    border: 2px solid #434343;
+    border: 2px solid var(--blue);
     cursor:pointer;
     color: #ffffff;
-    background-color:var(--question);
+    background-color:var(--blue);
     border-radius: 12px 12px 12px 12px;
     font-size: 1.2em;
     font-weight: 400;
     font-family:"Baloo Bhai 2", sans-serif;
     margin:1% 0%;
     padding: 0px 20px;
-    
+    box-shadow: 0px 0px 7px #a1a1a1;
 }
 .add2{
  padding: 3px;
  border: none;
  cursor:pointer;
- background-color:var(--darkgray);
- color: #a4a4a4;
+ background-color:var(--darkblue);
+ color: white;
  border-radius: 12px 12px 12px 12px;
  font-size: 1.2em;
  font-weight: 400;
  font-family:"Baloo Bhai 2", sans-serif;
  margin:1% 0%;
  padding: 0px 20px;
- box-shadow: 0px 0px 7px #454545;
+ box-shadow: 0px 0px 7px #a1a1a1;
 }
  .stepper {
     display: flex;
