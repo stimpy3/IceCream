@@ -150,9 +150,65 @@ window.addEventListener('resize', function() {
   }
 });
 //--------------------------------------------------------------------------
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.querySelector('.searchInput');
+  const placeholders = ['Search...', '"Mango"', '"Vanilla"?', 'or "Mocha"?'];
+  let placeholderIndex = 0;
+  let charIndex = 0;
+  let isAnimating = true;
+  
+  function typeWriter() {
+      if (!isAnimating) return;
+      
+      if (charIndex < placeholders[placeholderIndex].length) {
+          searchInput.setAttribute('placeholder', placeholders[placeholderIndex].substring(0, charIndex + 1));
+          charIndex++;
+          setTimeout(typeWriter, 100);
+      } else {
+          setTimeout(eraseText, 2000);
+      }
+  }
+  
+  function eraseText() {
+      if (!isAnimating) return;
+      
+      if (charIndex > 0) {
+          searchInput.setAttribute('placeholder', placeholders[placeholderIndex].substring(0, charIndex - 1));
+          charIndex--;
+          setTimeout(eraseText, 50);
+      } else {
+          placeholderIndex = (placeholderIndex + 1) % placeholders.length;
+          setTimeout(typeWriter, 500);
+      }
+  }
+  
+  function startAnimation() {
+      isAnimating = true;
+      charIndex = 0;
+      placeholderIndex = 0;
+      searchInput.setAttribute('placeholder', '');
+      typeWriter();
+  }
+  
+  function stopAnimation() {
+      isAnimating = false;
+      searchInput.setAttribute('placeholder', '');
+  }
+  
+  // Start the animation
+  startAnimation();
+  
+  // Stop animation on focus or when there's input
+  searchInput.addEventListener('focus', stopAnimation);
+  searchInput.addEventListener('input', stopAnimation);
+  
+  // Restart animation on blur if input is empty
+  searchInput.addEventListener('blur', function() {
+      if (!this.value) {
+          startAnimation();
+      }
+  });
+});
 //----------adboard---------------------------------------------------------
 
 //without Manual contol auto slideshow============================
