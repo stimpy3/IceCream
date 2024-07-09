@@ -87,28 +87,26 @@ const  almond2=`alldry fruitnaturalnutsalmondallmondaolmondbadambaddamroastalmon
 /*why a separate fiter div function
 The issue in your code is that the event listeners and the div filtering logic are not connected.
  The div filtering is running immediately, before any input is provided.*/
-function filterDivs(input) {
-
-  allDiv.forEach(div => {
-    /*flavors[div.id].name is actually a string (like "cookie2")
-     rather than the variable containing the keywords
-     thats why use eval() */
-        if (eval(flavours[div.id].name).trim().toLowerCase().includes(input.trim().toLowerCase())) 
-         {
-         div.style.display = 'block';
-         } 
-        else {
-         div.style.display = 'none';
-         }
-});
+allDiv.forEach(div => {
+    /*eval necessary*/
+    if (eval(flavours[div.id].name).trim().toLowerCase().includes(input.trim().toLowerCase())) {
+      if (screenWidth > 625) {
+        div.style.display = 'block';
+      } else {
+        div.style.display = 'flex';
+        div.style.flexDirection = 'row';
+      }
+    } else {
+      div.style.display = 'none';
+    }
+  });
 }
-
-//starts filtering even before clicking search or enter
+//live search
 searchInput.addEventListener("keyup", function() {
   const input = searchInput.value;
-  if(input.length)
-  {filterDivs(input);}
-  //scroll to top of inner display product div
+  if (input.length) {
+    filterDivs(input);
+  } 
   const ProductDisplayDiv = document.getElementById('productDisplayDiv');
   ProductDisplayDiv.scrollIntoView({behavior: 'smooth', block: 'start'});
 });
@@ -118,15 +116,22 @@ searchBtn.addEventListener("click", function() {
   filterDivs(input);
 });
 
-// Event for Enter key press
 searchInput.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
     const input = searchInput.value;
     filterDivs(input);
-   
-    // Scroll the div to the top of the viewport
   }
-}); 
+});
+
+// Add this function to handle window resizing
+window.addEventListener('resize', function() {
+  const input = searchInput.value;
+  if (input.length) {
+    filterDivs(input);
+  } else {
+    refreshDiv();
+  }
+});
 //--------------------------------------------------------------------------
 
 
@@ -154,7 +159,7 @@ const adboard = document.getElementById("adboard");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const images = ["sale1.png", "sale2.png", "sale3.png"]; // Array of image URLs
-const colors = ["#957FFC", "#E0A8A2", "#F8D871"];
+const colors = ["#957FFC", "#E0A8A2", "#A7B066"];
 let currentImageIndex = 0;
 let slideInterval; /*global necessay because we have set interval with variable slideInterval 
  if this variable was local then each time the function containing this local is called
