@@ -2,7 +2,8 @@
     padding:0;
     margin:0;
 }
-button{user-select:none;
+button{
+    user-select: none;
 }
 :root {
     --blue: #3778ac;
@@ -14,7 +15,6 @@ button{user-select:none;
     --unique:#c300ff;
     --contentboxcolor:#dedede;
     --question:#1b1b1b;
-    --answer:#0c0c0c;
   }
 
 html{
@@ -51,7 +51,6 @@ nav{
     background-repeat: no-repeat;
     height:95%;
     width:10%;
-    user-select:none;
 }
 #logo:hover{
  border:2px solid #f0f0f0;
@@ -209,7 +208,6 @@ content{
 
 #adDiv
 {
- 
  height: 450px;
  width: 100%;
  padding-top: 100px;
@@ -387,7 +385,7 @@ html::-webkit-scrollbar {
     background-image: url("mango.png"); 
 }
 #img9{
-    background-image: url("BluBan.png"); 
+    background-image: url("blueBan.png"); 
 }
 #img10{
     background-image: url("walnut.png"); 
@@ -573,18 +571,18 @@ html::-webkit-scrollbar {
     height:fit-content;
     width: 85vw;
     background-color: transparent;
-    font-family: "DM Serif Display", serif;
+    font-family: "Rubik", sans-serif;
+    text-align: center;
     font-size: 5rem;
     justify-content: center;
-    color:#6da7c2;
+    background-color:#ffffff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 #questionDiv #freq{
     margin:0% 0% 5% 0%;
-}
-#innerQuestionDiv p{
-  text-align: center;
-  
 }
 
 #questionbox{
@@ -612,18 +610,21 @@ html::-webkit-scrollbar {
     font-size: 1.5rem;
 }
 .question:hover{
-    background-color: var(--question);
+    background-color: #424242;
 }
 
 .show{
     font-size: 2rem;
 }
-.answer{
+.questionanswer .answer{
     padding: 2px;
-    font-size: 1.5rem;
-    background-color: var(--answer);
+    font-size: 0.8rem;
+    background-color: var(--question);
     color: white;
     display: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 100;
+    font-family: "Rubik", sans-serif;
     
 }
 
@@ -650,7 +651,7 @@ html::-webkit-scrollbar {
 #historyHeading{
  font-size: 6rem;
  font-family: "DM Serif Display", serif;
- color:#6da7c2;
+ color:white;
 }
 #historyText{
  color: white;
@@ -695,17 +696,20 @@ footer{
 .foottxt{
  display: flex;
  justify-content: space-evenly;
- border-bottom: 2px dotted #454545;
- padding-bottom: 5%;
+ padding: 5% 0%;
  margin-bottom: 2%;
 }
-
+#know{
+    border-left: none;
+}
 .footdiv{
  font-family: "Baloo Bhai 2", sans-serif;
  text-align: center;
- height:80px;
+
+ height:fit-content;
  width:200px;
- padding: 2% 0% 3% 0%;
+ padding: 0% 5% 3% 0%;
+ border-bottom: 2px double #454545;
 }
 
 .whitetxt{
@@ -894,14 +898,14 @@ hence gotta mention both of them separated by comma*/
     
     #adDiv
     { width: 100%;
-    height: 200px;
-     padding-top: 100px;
+    height: 300px;
+     padding-top: 80px;
      padding-bottom: 20px;
     }
     
     #adboard {
         position:relative;
-        height: 200px; /* Adjust height as needed */
+        height: 100%; /* Adjust height as needed */
         width:100%;
         border-radius: 0px;
         background-size: contain;
@@ -1058,15 +1062,19 @@ hence gotta mention both of them separated by comma*/
     display: none;
 }
 footer{
-padding: 0px 5px;
+padding: 0px 5px 5px 5px;
 box-sizing: border-box;
+
 }
 
 .footdiv{
  text-align: center;
- height:fit-content;
+ height:70px;
  width:fit-content;
- padding: 5% 1%;
+ padding: 0% 1% 3% 1%;
+ border-left: none;
+ border-bottom: 2px double #7a7a7a;
+ 
 }
 .footdiv li{
     height: 12px;
@@ -1075,7 +1083,7 @@ box-sizing: border-box;
     font-size: 0.8rem;
 }  
 .footerLink{
-    font-size: 0.5rem;
+    font-size: 0.75rem;
 } 
 .greytxt{
     font-size: 0.5rem;
