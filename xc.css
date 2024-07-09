@@ -843,9 +843,246 @@ hence gotta mention both of them separated by comma*/
    }
    
   }
-  @media screen and (min-device-width: 0px) and (max-device-width: 625px), screen and (min-width: 0px) and (max-width: 625px){
-    body{
-        display:none;
+/*PHONE*/
+@media screen and (min-device-width: 0px) and (max-device-width: 625px), screen and (min-width: 0px) and (max-width: 625px){
+    #logo{
+        width:30%;
+        margin-left: 10px;
     }
+    #searchAccCart{
+        width:70%;
+    }
+    .options{
+        display: none;
+    }
+    #searchAccCart{
+        width: fit-content;
+    }
+    .search-container {
+        width:50%;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-right: 5%;
+        height: 30px;
+        background-color:#ffffffb1;
+      }
+    
+      .search-container input[type="search"] {
+        padding: 0.2rem 0.5rem; /* Add padding for better user experience */
+        font-size: 0.8rem; /* Set the font size */
+       background-color: inherit;
+      } 
+      .search-container button{
+        padding: 0.2rem 0.3rem;
+        height: 100%;
+        font-size: 0.8rem;
+      }
+      
+      .search-container button:hover {
+        background-color: var(--darkblue); 
+      }
+    .cartContainer{
+        font-size: 0.9rem;
+        padding-right: 2px;
+        height: 30px;
+        width: 30px;
+        border-radius: 10px;
+    }
+    .cartContainer:hover{
+        font-size: 0.9rem;
+        padding-right: 4px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    #adDiv
+    { width: 100%;
+    height: 200px;
+     padding-top: 100px;
+     padding-bottom: 20px;
+    }
+    
+    #adboard {
+        position:relative;
+        height: 200px; /* Adjust height as needed */
+        width:100%;
+        border-radius: 0px;
+        background-size: contain;
+      }
+
+    
+#productDisplayDiv{  
+    padding:0%;
    }
+   
+   #innerproductdisplaydiv{
+       height:fit-content;
+       width: 100%;
+       border-radius: 0px;
+       border: none;
+       display: block;
+       padding: 0px;
+   }
+   .cards {
+    box-sizing: border-box;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    border-radius: 0px;
+    flex-direction: row;
+    padding:0px 10px ;
+    margin-bottom: 0px;
+    border-bottom:2px solid #b8b8b8 ;
+    color: #000000;
+    background-color: #e3e3e3;
+    box-shadow: none;
+    align-items: center;
+}
+.excludeImage{
+    padding: 4% 0% 4% 2%;
+    width:58%;
+    height: fit-content;
+    text-align: center;
+    background-color: inherit;
+    color: #000000;
+   
+    
+}
+.productImage{
+    box-sizing: border-box;
+    border-radius: 25px;
+    width:45%;
+    height: 80%;
+    border-image: none;
+}
+.details{
+    color: #000000;
+    font-size:0.7rem; 
+    font-weight: 600;
+}
+.filter{
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+#productName{
+    height: fit-content;
+    line-height: 1.2;/*1.2 times font size*/
+    color: #000000;
+    font-size: 1.5rem;
+}
+#addprice{
+    height: fit-content;
+}
+.add{
+    font-size: 0.9rem;
+    padding: 0px 10px;
+}
+.add2{
+ font-size: 0.9rem;
+ padding: 3px 10px;
+}
+.price{
+    padding: 3px;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0px 10px;
+}
+.stepper {
+    background-color: #a0a0a0;
+    color: white;
+    padding: 3px;
+    width: fit-content;
+    box-shadow: 0px 0px 7px #a1a1a1;
+    border-radius: 10px;
+  }
+  
+  .stepper-btn {
+    width: 15px;
+    height: 20px;
+    border-radius: 40%;
+    background-color: #eaeaea;
+    color: black;
+    font-size: 0.9rem;
+    box-shadow: 0px 0px 7px #454545;
+  }
+  
+  .stepper-number {
+    font-size: 0.9rem;
+    margin: 0 2px;
+    color: black;
+  }
+  
+  
+    #questionDiv{
+    padding: 8% 7.5vw;
+  }
+  
+    #innerQuestionDiv{
+    font-size: 2.5rem;
+    width: 100%;
+   }
+
+   #innerQuestionDiv #freq{
+    width: 100%;
+   }
+.questionanswer{
+    margin-bottom: 5px;
+}
+.question{
+    padding:0px 5px;
+    font-size: 1rem;
+}
+.show{
+    font-size: 0.8rem;
+}
+.answer{
+    padding: 2px;
+    font-size: 1rem; 
+}
+.r{ padding: 5% 7.5vw 70px 7.5vw;
+}
+#heading{
+    width:100%;
+}
+#historyHeading{
+ text-align: center;
+ font-size: 2.5rem;
+ width: 100%;
+ 
+}
+#historyText{
+ font-size:1rem;
+ width:100%;
+ text-align: justify;
+  text-justify: inter-word;
+}
+.imgc{
+    display: none;
+}
+footer{
+padding: 0px 5px;
+box-sizing: border-box;
+}
+
+.footdiv{
+ text-align: center;
+ height:fit-content;
+ width:fit-content;
+ padding: 5% 1%;
+}
+.footdiv li{
+    height: 12px;
+}
+.whitetxt{
+    font-size: 0.8rem;
+}  
+.footerLink{
+    font-size: 0.5rem;
+} 
+.greytxt{
+    font-size: 0.5rem;
+}
+}
+
   
