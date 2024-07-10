@@ -29,10 +29,10 @@
   </a> <!--You need to use anchor tag for you logo so scroll to top works on click-->
 
   <div id="food">
-    <button class="options" id="milk" onclick="classicButton()">Classic</button>
-    <button class="options" id="ice" onclick="fruitButton()">Fruit</button>
-    <button class="options" id="cake" onclick="nutsButton()">Nuts</button>
-    <button class="options" id="cake" onclick="uniqueButton()">Unique</button>
+    <button class="options" onclick="classicButton()">Classic</button>
+    <button class="options" onclick="fruitButton()">Fruit</button>
+    <button class="options" onclick="nutsButton()">Nuts</button>
+    <button class="options" onclick="uniqueButton()">Unique</button>
   </div>
 
 <div id="searchAccCart">
@@ -62,6 +62,13 @@
                   <div class="dot" id="dot3"></div>
              </div>
         </div>
+    </div>
+    <div class="phoneoptions">
+      <p class="pf">Filters</p>
+      <div class="bu">
+           <button class="fil" onclick="classicButton()">Classic</button> <button class="fil" onclick="fruitButton()">Fruits</button> <button class="fil" onclick="nutsButton()">Nuts</button> <button class="fil" id="u" onclick="uniqueButton()">Unique</button>
+           <button class="fil" onclick="allButton()">All</button>
+          </div>
     </div>
 
     <div id="productDisplayDiv">
@@ -347,7 +354,7 @@
   <div class="excludeImage">
         <div id="productName">Caramel Cashew</div>
         <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">Rich caramel ribbons weave through a canvas of creamy cashew gelato</p>  
+        <p class="details">Rich caramel ribbons weave through creamy cashew gelato</p>  
         <div id="addprice">
           <button class="add" id="addId">Add</button>  
           <p class="price" id="priceId">Price: ₹144</p>
@@ -374,7 +381,7 @@
   <div class="excludeImage">
         <div id="productName">Roasted Almond</div>
         <div class="qtyfilter"><p class="filter" id="nuts">Nuts</p>&nbsp;&nbsp;<p class="filter">1Litre</p></div>
-        <p class="details">almond chunks waltz through a cloud of creamy vanilla, offering a symphony of textures</p>  
+        <p class="details">almond chunks through a cloud of vanilla, offering a symphony of textures</p>  
         <div id="addprice">
           <button class="add" id="addId">Add</button>  
           <p class="price" id="priceId">Price: ₹150</p>
