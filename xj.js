@@ -358,12 +358,18 @@ let unique=["cottoncandy","rainbow","cheese","mint"];
 let showDiv = [];
 
 function updateVisibleDivs() {
+  const s=window.innerWidth;
   const ProductDisplayDiv = document.getElementById('productDisplayDiv');
   ProductDisplayDiv.scrollIntoView({behavior: 'smooth', block: 'start'});
   allDiv.forEach(div => {
       if (showDiv.includes(div.id)) {
-          div.style.display = 'block';
-      } else {
+        if(s>625){
+          div.style.display = 'block';}
+        else{
+          div.style.display = 'flex';
+        }
+      } 
+      else {
           div.style.display = 'none';
       }
   });
@@ -401,7 +407,21 @@ function uniqueButton() {
   console.log(showDiv);
   updateVisibleDivs();
 }
+
+function allButton(){
+  const screenWidth = window.innerWidth;
+  
+  allDiv.forEach(div => {
+    if (screenWidth > 625) {
+      div.style.display = "block";
+    } else {
+      div.style.display = "flex";
+      div.style.flexDirection = "row";
+    }
+  });
+}
 //--------------------------------------------------------------------------
+
 
 
 
