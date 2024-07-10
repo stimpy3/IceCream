@@ -1,6 +1,7 @@
 *{
     padding:0;
     margin:0;
+    box-sizing: border-box;
 }
 button{
     user-select: none;
@@ -13,8 +14,10 @@ button{
     --fruit:#ff42d9;
     --nuts:#4cc2f9;
     --unique:#c300ff;
-    --contentboxcolor:#dedede;
+    --contentboxcolor:#cdcdcd;
     --question:#1b1b1b;
+    --bordercolor:#7a7a7a;
+    --bordercolorlight:#cbcbcb;
   }
 
 html{
@@ -106,9 +109,10 @@ nav{
     border: 1px solid #ccc; /* Create a basic border */
   }
 
- .searchInput::placeholder { 
+  .searchInput::placeholder { 
     font-size: 0.9rem;
   }
+  
   
   .search-container input[type="search"] {
     flex:0;
@@ -122,6 +126,7 @@ nav{
    position: relative;
    background-color: #ffffffb1;
   }
+
 
 
   
@@ -210,7 +215,7 @@ content{
 
 #adDiv
 {
- height: 450px;
+ height: 590px;
  width: 100%;
  padding-top: 100px;
  padding-bottom: 20px;
@@ -284,6 +289,47 @@ content{
 
 }
 
+.phoneoptions{
+width:100%;
+height: 120px;
+display: none;  
+border-top: 2px solid var(--bordercolorlight);
+border-bottom: 2px solid var(--bordercolorlight);
+padding:5px 10px;
+box-sizing: border-box;
+overflow: hidden; 
+}
+.pf{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: "Rubik", sans-serif;
+    box-sizing: border-box;
+}
+.bu{
+    display: flex;
+    justify-content:start;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 5px;/*good  seeeee*/
+}
+
+.fil{
+    width: 65px;
+    text-align: center;
+    height: fit-content;
+    background-color: black;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 7px #454545;
+    font-size: 1rem;
+    padding: 3px 0px;
+    border-radius: 25px;
+    display: inline-block;
+    box-sizing: border-box;
+}
   
 
 #productDisplayDiv{
@@ -336,11 +382,11 @@ html::-webkit-scrollbar {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-radius: calc(50px - 15px);
+    border-radius: 8px ;
     color: #fff;
     flex-direction: column;
     display: inline-block; /*important for button*/
-    background-color: #282828;
+    background-color: #171717;
     overflow: hidden;
     padding-bottom: 10px;
    
@@ -349,7 +395,7 @@ html::-webkit-scrollbar {
     padding: 4%;
     height: 58%;
     box-sizing: border-box;
-    background-color:#282828;
+    background-color:inherit;
     overflow: hidden;
     
 }
@@ -442,7 +488,7 @@ html::-webkit-scrollbar {
     /*font-family:"Baloo Bhai 2", sans-serif;*/
     color: #ffffff;
     margin: 2% 0% 7% 0%;  
-    font-size:1em;}
+    font-size:0.9rem;}
 .qtyfilter{
     display: flex;
     width: 100%;
@@ -476,6 +522,7 @@ html::-webkit-scrollbar {
     font-weight: 500;
     font-family:"Baloo Bhai 2", sans-serif;
     color:white;
+    line-height: 1.2/*1.2 times line height*/;
 }
 #addprice{
     display: flex;
@@ -497,7 +544,7 @@ html::-webkit-scrollbar {
     font-family:"Baloo Bhai 2", sans-serif;
     margin:1% 0%;
     padding: 0px 20px;
-    box-shadow: 0px 0px 7px #a1a1a1;
+    box-shadow: 0px 0px 7px #171717;
 }
 .add2{
  padding: 3px;
@@ -511,7 +558,7 @@ html::-webkit-scrollbar {
  font-family:"Baloo Bhai 2", sans-serif;
  margin:1% 0%;
  padding: 0px 20px;
- box-shadow: 0px 0px 7px #a1a1a1;
+ box-shadow: 0px 0px 7px #171717;
 }
  .stepper {
     display: flex;
@@ -535,7 +582,7 @@ html::-webkit-scrollbar {
   
   .stepper-number {
     font-size: 18px;
-    margin: 0 15px;
+    margin: 0 8px;
     min-width: 20px;
     text-align: center;
     color: #ffffff;
@@ -544,7 +591,6 @@ html::-webkit-scrollbar {
 
 
 .price{
-    padding: 3px;
     border: none;
     background-color: transparent;
     color: #ffffff;
@@ -553,7 +599,7 @@ html::-webkit-scrollbar {
     font-weight: 400;
     font-family:"Baloo Bhai 2", sans-serif;
     margin:1% 0%;
-    padding: 0px 20px;
+    padding: 0px 15px;
 }
 
 #questionDiv{
@@ -698,7 +744,7 @@ footer{
 .foottxt{
  display: flex;
  justify-content: space-evenly;
- padding: 5% 0%;
+ padding: 2% 0% 1% 0%;
  margin-bottom: 2%;
 }
 #know{
@@ -707,11 +753,10 @@ footer{
 .footdiv{
  font-family: "Baloo Bhai 2", sans-serif;
  text-align: center;
-
  height:fit-content;
  width:200px;
- padding: 0% 5% 3% 0%;
- border-bottom: 2px double #454545;
+ padding: 0% 1.5% 3% 1.5%;
+ border-bottom: 2px dotted #454545;
 }
 
 .whitetxt{
@@ -727,6 +772,56 @@ footer{
     font-family: "Baloo Bhai 2", sans-serif;
     font-size: 1rem;
     color: #7a7a7a;
+}
+@media screen and (min-device-width: 1025px) and (max-device-width: 1025px), screen and (max-device-width: 1095px), screen and (max-width: 1095px){
+   .cards{
+    background-color: #e3e3e3;
+   }
+   #productName{
+    color:black;
+   }
+   .filter{
+    color: black;
+   }
+   .details{
+    color:black;
+   }
+   .price{
+    color:black;
+   }
+    .excludeImage{
+    background-color: #e3e3e3;
+   }
+    #productName{
+        font-size: 1.8rem;
+    }
+    .stepper {
+        background-color: #a0a0a0;
+        color: white;
+        padding: 2px;                                                        
+        width: fit-content;
+        margin: 0;
+        height: 38px;
+        box-shadow: 0px 0px 7px #a1a1a1;
+        border-radius: 10px;
+    
+      }
+      
+      .stepper-btn {
+        width: 16px;
+        height: 25px;
+        font-size: 1.2rem;
+        color: black;
+        background-color: #eaeaea;
+        border-radius: 10px;
+        box-shadow: 0px 0px 7px #454545;
+      }
+      
+      .stepper-number {
+        font-size: 1.2rem;
+        margin: 0 8px;
+        color: black;
+      }
 }
 /*min-width targets devices screen width and min-device-width targets browser width
 same for max
@@ -745,23 +840,42 @@ hence gotta mention both of them separated by comma*/
     .options{
         font-size: 17px;
     }
+    #innerproductdisplaydiv{
+        column-gap: 40px;
+    }
     .cards .details{
         display: none;
        }
     .cards{
         height: 280px;
+        color: black;
+        background-color: #e3e3e3;
+        box-shadow: 3px 3px 10px 2px var(--bordercolor);
        }
+       .excludeImage{
+        position: relative;
+        background-color: inherit;
+        color: black;  
+        box-shadow: none;
+    }
     #productName{
-        font-size: 1.6rem;
+        color: black;
+        font-size: 1.3rem;
+        line-height: 1.2;/*1.2times font size*/
        }
     #addprice{
-        height: 35px;
+        margin-top: 20px;
+        height: 40px;
+        bottom:20px;
+        position: absolute;
+        left:1px;
     }
     
     .add{
         font-size: 1rem;
+        width:60px;
         border-radius: 8px;
-        padding: 5px;
+        padding: 2px;
     }
     .add2{
         font-size: 1rem;
@@ -769,41 +883,112 @@ hence gotta mention both of them separated by comma*/
         padding: 5px;
     }
     .price{
+        color: black;
         font-size: 1rem;
         border-radius: 8px;
-        padding: 5px;
+        padding: 0px 0px;
+        margin-top: 1px;
     }
     .stepper {
-        font-size: 1rem;
-        border-radius: 15px;
-        padding: 2px;
+        background-color: #a0a0a0;
+        color: white;
+        padding: 2px;                                                        
         width: fit-content;
+        margin: 0;
+        height: 38px;
+        box-shadow: 0px 0px 7px #a1a1a1;
+        border-radius: 10px;
+    
       }
       
       .stepper-btn {
+        width: 16px;
+        height: 25px;
         font-size: 1rem;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+        color: black;
+        background-color: #eaeaea;
+        border-radius: 10px;
+        box-shadow: 0px 0px 7px #454545;
       }
       
       .stepper-number {
-        font-size: 1rem;
-        margin: 0 5px;
-        min-width: 12px;
+        font-size: 1.2rem;
+        margin: 0 8px;
+        color: black;
       }
     
   }
 
   @media screen and (min-device-width: 625px) and (max-device-width: 769px), screen and (min-width: 625px) and (max-width: 769px){
-   .cards .details{
+    #innerproductdisplaydiv{
+        column-gap: 20px;
+    }
+    .cards .details{
     display: none;
+   }
+   .excludeImage{
+    position: relative;
+   }
+   #addprice{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 93%;
+    height:40px;
+    bottom: 10px;
+   }
+   .stepper { 
+    height:38px;
+    width:fit-content;  
+   }
+   .stepper-btn {
+    width: 16px;
+    height: 25px;
+    font-size: 1rem;
+    color: black;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px #454545;
+  }
+  
+  .stepper-number {
+    font-size: 1rem;
+    margin: 0 5px;
+    color: black;
+
+  }
+   .add{
+    font-size: 1rem;
+    width:50px;
+    height:100%;
+    border-radius: 5px;
+    padding: 4px 2px;
+    box-shadow: 3px 3px 10px 2px var(--bordercolor);
+    margin-right:4px;
+   }
+   .add2{
+    height:100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 4px 4px;
+    margin-right:4px;
+   }
+   .price{
+    width:70px;
+    height: 100%;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    padding: 2px 2px;
+    margin:0;
+   
    }
    #productName{
     font-size: 1.2rem;
    }
    .cards{
     height: 250px;
+    box-shadow: 3px 3px 10px 2px var(--bordercolor);
+
    }
    .search-container input[type="search"] {
     padding: 0.25em 0.5em;
@@ -815,21 +1000,7 @@ hence gotta mention both of them separated by comma*/
     font-size: 14px;
     margin-right: 3%;
    }
-   .add{
-    font-size: 0.8rem;
-    border-radius: 5px;
-    padding: 8px;
-   }
-   .add2{
-    font-size: 0.8rem;
-    border-radius: 5px;
-    padding: 8px;
-   }
-   .price{
-    font-size: 0.8rem;
-    border-radius: 5px;
-    padding: 8px;
-   }
+   
    #food{
     width: 35%;
    }
@@ -912,6 +1083,10 @@ hence gotta mention both of them separated by comma*/
         border-radius: 0px;
         background-size: contain;
       }
+      .phoneoptions{
+        display: flex;
+        flex-direction: column;  
+        }
 
     
 #productDisplayDiv{  
@@ -947,9 +1122,7 @@ hence gotta mention both of them separated by comma*/
     height: fit-content;
     text-align: center;
     background-color: inherit;
-    color: #000000;
-   
-    
+    color: #000000;  
 }
 .productImage{
     box-sizing: border-box;
@@ -1002,17 +1175,17 @@ hence gotta mention both of them separated by comma*/
   
   .stepper-btn {
     width: 15px;
-    height: 20px;
+    height: 80%;
     border-radius: 40%;
     background-color: #eaeaea;
     color: black;
-    font-size: 1rem;
+    font-size: 1.2rem;
     box-shadow: 0px 0px 7px #454545;
   }
   
   .stepper-number {
-    font-size: 1rem;
-    margin: 0 2px;
+    font-size: 1.2rem;
+    margin: 0 5px;
     color: black;
   }
   
@@ -1068,18 +1241,19 @@ padding: 0px 5px 5px 5px;
 box-sizing: border-box;
 
 }
+
 .footdiv{
  text-align: center;
- height:fit-content;
+ height:100px;
  width:fit-content;
  padding: 0% 1% 3% 1%;
  border-left: none;
- border-bottom: 2px double #7a7a7a;
+ border-bottom: 2px double var(--bordercolor);
  
 }
 .footdiv li{
-    height: 12px;
-    padding: 5px;
+    height: 20px;
+    padding: 1px;
 }
 .whitetxt{
     font-size: 0.8rem;
