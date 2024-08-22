@@ -141,14 +141,7 @@ searchInput.addEventListener("keydown", function(event) {
 });
 
 // Add this function to handle window resizing
-window.addEventListener('resize', function() {
-  const input = searchInput.value;
-  if (input.length) {
-    filterDivs(input);
-  } else {
-    refreshDiv();
-  }
-});
+
 //--------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.querySelector('.searchInput');
