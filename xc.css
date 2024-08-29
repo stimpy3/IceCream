@@ -159,6 +159,7 @@ nav{
 }
 
 .cartContainer{
+    overflow:hidden;
     display: flex;
     font-size: 1.2em;
     margin-right: 7%;
